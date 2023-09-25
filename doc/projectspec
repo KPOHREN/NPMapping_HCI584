@@ -1,0 +1,95 @@
+National Park GUI
+HCI584 - Spec Document
+Version 1
+Kaitlin Pohren
+
+General Description	
+The idea for this project would be to process data on how busy each national park is for each given month, the corresponding weather data, as well as the distance from your location to each one. All this could go into an interactive map that would show you automatically the parks closest to you. This app would show the closest National Parks to travel to with more data on how busy each park is during each month, as well as what the weather is like during those months. When a user hovered on the map they could then see the additional weather/visitor data.This would require input from the user on their location. This would be used by travelers looking to plan a trip to a National Park in the Continental US + Alaska. Potential improvement to add Hawaii?
+
+External: 
+Scrape Data from NPS Stats: https://irma.nps.gov/Stats/Reports/Park/ARCH
+Scrape weather data from NCEI https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/city/time-series
+
+
+Map from Leaflet: Leaflet - a JavaScript library for interactive maps (leafletjs.com)
+Use of Flask and Folium to create web interface 
+
+Possible Enhancements: 
+Automatically select starting location
+Add precipitation data 
+Add general summary of park
+Add picture of the park
+Add zoom in and out feature
+Include territories and Hawaii?
+Ability to select two parks and compare them on a new screen
+
+Task Vignettes
+Task One: Set initial location 
+Have user input their zip code
+User Interfacing: 
+User reaches web page, inputs location (Check validity)
+User gets map of all parks closest to them within 200 miles
+Task Two: View and analyze results
+Hovering over dots on map will reveal more information
+Show plot of monthly visitors
+Show plot of temperatures
+Show distance from user
+Interfacing: 
+User views map within travel range defaulted 
+Red dots indicate NP, Text says Hoover to see more on one dot
+User Hovers and two plots pop-up with data, distance and Park Title 
+Task Three: Change Filters to refine search
+User can change filters to refine search next to map
+Interfacing: 
+User changes miles from default (between 10 miles to 1000 miles)
+User changes temperature low temp or high temp (between -30F to 100F)
+User changes monthly visitors to below certain number (ie. under 5000)
+User hits Refresh Search, which updates map accordingly 
+
+Example interface
+
+
+
+
+
+
+
+
+
+
+III. Technical Flow 
+
+Core Functions: 
+def calculate_distance(zip_code, max_distance):
+Gets Zip code 
+Calculates distance to all parks in continental US & alaska
+returns distance to each park
+def get_temp_data(temperature, precipitation):
+Scrape data from weather service into dictionary
+Plots average monthly highs & lows in each national park
+Plots average monthly precipitation in each park 
+Returns dictionary of precip & temp
+def get_vistor_numbers(monthly visitors):
+Scrape data from NPS Stats on monthly visitors to each park
+Place in dictionary
+Plots bar graph of monthly visitors
+Returns dic of monthly visitors of each park
+def map_top_choices(folium, configdict,???):
+Draw dots on map
+Default zoom to 200 mile radius
+Pick color for dots
+Include legend
+Include “hover” prompt
+def filter_map:(folium, temp high, temp low, distance, max monthly visitors, month):
+Draw new map with only data that meets filter criteria
+Return new map
+
+Flow Diagram: 
+
+
+
+
+
+IV. Final Assessment
+
+Through creating the specification I realized the scope of my project needed to shift from recommending the top choices to just showing the closests parks for complexity's sake. I have never created a “web page” to show anything. I see the biggest challenges as mapping the parks, and then adding the plots to the map with a hoover. I am wondering if the hover is the best way to show the data I want, or if clicking on the park indicator would be a cleaner way to show the data? As well as how long would processing take on something like that? Would it be most effective to create the plots and save them as pictures and just show the picture of it on the map? 
