@@ -1,4 +1,4 @@
-ParkName, State, parklat, parklon, AnnualVisitors, ClosestAirportCity, airportlat, airportlon 
+ParkName,State,parklat,parklon,AnnualVisitors, ClosestAirportCity, airportlat, airportlon 
 Acadia National Park, Maine,44.3386,-68.2733,3500000, Bar Harbor,44.3876,-68.2039
 Arches National Park, Utah,38.7331,-109.5925,1700000, Moab,38.5733,-109.5498
 Badlands National Park, South Dakota,43.8554,-102.3397,1100000, Rapid City,44.076,-103.228
