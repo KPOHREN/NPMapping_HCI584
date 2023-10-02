@@ -67,28 +67,26 @@ def haversine_distance(lat1, lon1, lat2, lon2):
 
     return distance
 
-#calculate home location to acadia national park
-acadia_lat = float(44.3386)
-acadia_lon = float(-68.2733)
-
-
-#Todo - Add in the lat/lon of all national parks and find the distances
 #read in Nat Park Locations
 df = pd.read_csv('npdata.csv')
-print(df)
 
 #create new column to iterate through finding the distance to all parks
 df["miles"] = 0
-print(list(df.columns)) 
 
 for i,row in df.iterrows(): 
     lat = df.at[i,"parklat"]
     lon = df.at[i,"parklon"]
     distance = haversine_distance(startlat, startlon, lat, lon)
-    df.loc[i, "miles"] = distance # short for  blue
+    df.loc[i, "miles"] = distance 
 
-print(df)       
+#print(df.nsmallest(3, 'miles'))
 
-#Then sort them so only the top three are selected 
-df.nsmallest(3, 'miles')
-print(df)
+#sort by the closests parks and print out those names
+sorteddf = df.sort_values(by=['miles'])
+nearpark = sorteddf.at[27,"ParkName"] #Fix from hardcode to pull out index values of min
+nextpark = sorteddf.at[17,"ParkName"]
+farpark = sorteddf.at[28,"ParkName"]
+
+print(sorteddf)
+
+print("The closest parks are:", nearpark, nextpark, farpark)
