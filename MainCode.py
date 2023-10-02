@@ -75,18 +75,21 @@ acadia_lon = float(-68.2733)
 #Todo - Add in the lat/lon of all national parks and find the distances
 #Then sort them so only the top three are selected 
 
-distance = haversine_distance(startlat, startlon, acadia_lat, acadia_lon)
-print("The distance between", place_name, "and Acadia National park is", distance, "miles")
+acmiles = haversine_distance(startlat, startlon, acadia_lat, acadia_lon)
+print("The distance between", place_name, "and Acadia National park is", acmiles, "miles")
 
 #read in Nat Park Locations
 df = pd.read_csv('npdata.csv')
 print(df)
 
-#Enter National Park Name to find location to
-park = input("Enter the national park you would like to find the distance to:")
+#create new column to iterate through finding the distance to all parks
+df["miles"] = 0
+print(list(df.columns)) 
 
-#Testing out pulling locations from csv - FAILING
-#nplat = df[df['parklat'] == 'Arches National Park']
-#nplon = df[df['parklon'] == 'Arches National Park']
+for i,row in df.iterrows(): 
+    lat = df.loc[i, "parklat"]
+    lon = df.loc[i, "parklon"]
+    distance = haversine_distance(startlat, startlon, lat, lon)
+    df.loc[i, "miles"] = distance # short for  blue
 
-#print(parklat, parklon)
+print(df)       
