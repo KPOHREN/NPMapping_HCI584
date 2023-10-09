@@ -88,5 +88,4 @@ nextpark = sorteddf.at[17,"ParkName"]
 farpark = sorteddf.at[28,"ParkName"]
 
 print(sorteddf)
-
 print("The closest parks are:", nearpark, nextpark, farpark)
