@@ -1,6 +1,5 @@
 #MainCode
 
-
 #Import all needs
 import pandas as pd
 import requests
@@ -68,21 +67,24 @@ def haversine_distance(lat1, lon1, lat2, lon2):
 
 #read tempdata
 dft = pd.read_csv('tempdata.csv')
+
     
 #read precipdata
 dfp = pd.read_csv('precipdata.csv')
-    
+for col in dfp.columns:
+    print(col)
 
-# magSource is the agency (seismic network) that measured the quake's magnitude
-cnt = dft["Acadia National Park"]
 
-cnt.plot(   kind='bar',   # vertical
+# plotting temp data
+#cnt = dft['Acadia National Park']
+
+#cnt.plot(   kind='bar',   # vertical
                 #kind="barh",  # horizontal 
-                ax=None,
-                figsize=(10, 5),
-                title="Temperature of Acadia National Park" );
-fig = p.get_figure()
-fig.savefig("acadia.pdf")
+                #ax=None,
+                #figsize=(10, 5),
+                #title="Temperature of Acadia National Park" );
+#fig = p.get_figure()
+#fig.savefig("acadia.pdf")
 
     
 #read in Nat Park Locations
