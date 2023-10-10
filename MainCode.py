@@ -5,13 +5,12 @@
 import pandas as pd
 import requests
 import math
+import matplotlib.pyplot as plt 
 
 #Ask User for inital location
-#startloc = input("Please enter your city and state abreviation")
+place_name = input("Please enter your city & state abreviation (ie. Ames, IA)")
 
 ##todo - CHECK that city and state are in a valid format
-
-#pulls starting location for lat/lon
 
 def geocode_place(place_name):
     base_url = "https://geocode.maps.co/search"  # free geocoding service, w/o need for API key!
@@ -32,7 +31,7 @@ def geocode_place(place_name):
     # Return None if no data or an error occurred
     return None, None
 
-place_name = "Dubuque, IA"
+#place_name = "Dubuque, IA"
 lat, lon = geocode_place(place_name)
 
 if lat is not None and lon is not None:
@@ -67,6 +66,25 @@ def haversine_distance(lat1, lon1, lat2, lon2):
 
     return distance
 
+#read tempdata
+dft = pd.read_csv('tempdata.csv')
+    
+#read precipdata
+dfp = pd.read_csv('precipdata.csv')
+    
+
+# magSource is the agency (seismic network) that measured the quake's magnitude
+cnt = dft["Acadia National Park"]
+
+cnt.plot(   kind='bar',   # vertical
+                #kind="barh",  # horizontal 
+                ax=None,
+                figsize=(10, 5),
+                title="Temperature of Acadia National Park" );
+fig = p.get_figure()
+fig.savefig("acadia.pdf")
+
+    
 #read in Nat Park Locations
 df = pd.read_csv('npdata.csv')
 
@@ -89,3 +107,4 @@ farpark = sorteddf.at[28,"ParkName"]
 
 print(sorteddf)
 print("The closest parks are:", nearpark, nextpark, farpark)
+
