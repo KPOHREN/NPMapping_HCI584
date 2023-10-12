@@ -76,15 +76,18 @@ for col in dfp.columns:
 
 
 # plotting temp data
-#cnt = dft['Acadia National Park']
+plt.figure()
+cnt = dft['Acadia National Park']
 
-#cnt.plot(   kind='bar',   # vertical
-                #kind="barh",  # horizontal 
-                #ax=None,
-                #figsize=(10, 5),
-                #title="Temperature of Acadia National Park" );
-#fig = p.get_figure()
-#fig.savefig("acadia.pdf")
+t = cnt.plot(   kind='bar',   # vertical
+                ax=None,
+                figsize=(10, 5),
+                title="Temperature of Acadia National Park",
+                x="Month",
+                y="Temperature (°F)"
+                );
+fig = t.get_figure()
+fig.savefig("acadia_a.pdf")
 
     
 #read in Nat Park Locations
