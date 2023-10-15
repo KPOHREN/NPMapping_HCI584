@@ -69,30 +69,30 @@ def haversine_distance(lat1, lon1, lat2, lon2):
 #read tempdata
 tem='archesnp.csv'
 
-def make_plot(csv_string):
-    df = pd.read_csv(csv_string)
-    display(df)
 
-    header = list(df)
-    mtot = list(df.sum(axis=0))
+dft = pd.read_csv('tempdata.csv')
+display(dft)
+
+for index, row in dft.iterrows():
+    category = row['park']
+    values = row.drop('park')
     
-    df = pd.DataFrame({'Month':header, 'Temperature':mtot})
-    ax = df.plot.bar(x='Month', y='Temperature', rot=0); # ; don't show output
+    # Create a bar plot for the current row
+    plt.bar(values.index, values)
+    plt.title(f'Temperature in {category}')
     
-    fig = ax.get_figure()
-
-    # set figure size (proportions)
-    fig.set_figwidth(10)
-    fig.set_figheight(5)
-
-
-    fig.savefig("plot.png")
+    # Adjust the plot layout
+    plt.tight_layout()
     
-    return "plot.png" 
-
-make_plot(tem)
-
+    # Define the filename for the current plot
+    filename = f'plot_{category}.png'
     
+    # Save the plot as an image
+    plt.savefig(filename)
+    
+    # Close the plot to release resources
+    plt.close()
+   
 #read precipdata
 dfp = pd.read_csv('precipdata.csv')
 
