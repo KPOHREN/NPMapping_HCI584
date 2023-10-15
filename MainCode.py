@@ -5,6 +5,7 @@ import pandas as pd
 import requests
 import math
 import matplotlib.pyplot as plt 
+from IPython.display import display
 
 #Ask User for inital location
 place_name = input("Please enter your city & state abreviation (ie. Ames, IA)")
@@ -66,28 +67,35 @@ def haversine_distance(lat1, lon1, lat2, lon2):
     return distance
 
 #read tempdata
-dft = pd.read_csv('tempdata.csv')
+tem='archesnp.csv'
+
+def make_plot(csv_string):
+    df = pd.read_csv(csv_string)
+    display(df)
+
+    header = list(df)
+    mtot = list(df.sum(axis=0))
+    
+    df = pd.DataFrame({'Month':header, 'Temperature':mtot})
+    ax = df.plot.bar(x='Month', y='Temperature', rot=0); # ; don't show output
+    
+    fig = ax.get_figure()
+
+    # set figure size (proportions)
+    fig.set_figwidth(10)
+    fig.set_figheight(5)
+
+
+    fig.savefig("plot.png")
+    
+    return "plot.png" 
+
+make_plot(tem)
 
     
 #read precipdata
 dfp = pd.read_csv('precipdata.csv')
-for col in dfp.columns:
-    print(col)
 
-
-# plotting temp data
-plt.figure()
-cnt = dft['Acadia National Park']
-
-t = cnt.plot(   kind='bar',   # vertical
-                ax=None,
-                figsize=(10, 5),
-                title="Temperature of Acadia National Park",
-                x="Month",
-                y="Temperature (°F)"
-                );
-fig = t.get_figure()
-fig.savefig("acadia_a.pdf")
 
     
 #read in Nat Park Locations
@@ -110,6 +118,6 @@ nearpark = sorteddf.at[27,"ParkName"] #Fix from hardcode to pull out index value
 nextpark = sorteddf.at[17,"ParkName"]
 farpark = sorteddf.at[28,"ParkName"]
 
-print(sorteddf)
+#display(sorteddf)
 print("The closest parks are:", nearpark, nextpark, farpark)
 
