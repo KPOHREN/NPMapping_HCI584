@@ -71,32 +71,50 @@ tem='archesnp.csv'
 
 
 dft = pd.read_csv('tempdata.csv')
-display(dft)
 
-for index, row in dft.iterrows():
-    category = row['park']
-    values = row.drop('park')
+#comment out as not needed to run everytime
+#for index, row in dft.iterrows():
+    #category = row['park']
+    #values = row.drop('park')
     
     # Create a bar plot for the current row
-    plt.bar(values.index, values)
-    plt.title(f'Temperature in {category}')
+    #plt.bar(values.index, values)
+    #plt.title(f'Temperature in {category}')
     
     # Adjust the plot layout
-    plt.tight_layout()
+    #plt.tight_layout()
     
     # Define the filename for the current plot
-    filename = f'plot_{category}.png'
+    #filename = f'plot_{category}.png'
     
     # Save the plot as an image
-    plt.savefig(filename)
+    #plt.savefig(filename)
     
     # Close the plot to release resources
-    plt.close()
+    #plt.close()
    
 #read precipdata
 dfp = pd.read_csv('precipdata.csv')
 
-
+#for index, row in dfp.iterrows():
+    #category = row['park']
+    #values = row.drop('park')
+    
+    # Create a bar plot for the current row
+    #plt.bar(values.index, values)
+    #plt.title(f'Precipitation in inches for {category}')
+    
+    # Adjust the plot layout
+    #plt.tight_layout()
+    
+    # Define the filename for the current plot
+    #filename = f'precipplot_{category}.png'
+    
+    # Save the plot as an image
+    #plt.savefig(filename)
+    
+    # Close the plot to release resources
+    #plt.close()
     
 #read in Nat Park Locations
 df = pd.read_csv('npdata.csv')
