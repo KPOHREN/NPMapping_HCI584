@@ -131,11 +131,21 @@ for i,row in df.iterrows():
 #print(df.nsmallest(3, 'miles'))
 
 #sort by the closests parks and print out those names
-sorteddf = df.sort_values(by=['miles'])
-nearpark = sorteddf.at[27,"ParkName"] #Fix from hardcode to pull out index values of min
-nextpark = sorteddf.at[17,"ParkName"]
-farpark = sorteddf.at[28,"ParkName"]
+sorted_df = df.sort_values(by=['miles'])
+# Get the index of rows with the smallest 'Value1'
+nearpark_index = sorted_df.index[0]
+nextpark_index = sorted_df.index[1]
+farpark_index = sorted_df.index[2]
+
+
+
+# You can also retrieve the corresponding row(s) with the smallest value
+#smallest_value_rows = sorted_df.loc[smallest_value_indices]
+
+nearpark = sorted_df.at[nearpark_index,"ParkName"] #Fix from hardcode to pull out index values of min
+nextpark = sorted_df.at[nextpark_index,"ParkName"]
+farpark = sorted_df.at[farpark_index,"ParkName"]
 
 #display(sorteddf)
-print("The closest parks are:", nearpark, nextpark, farpark)
+print("The closest parks are:", nearpark, ",", nextpark,", and", farpark)
 
