@@ -2,10 +2,12 @@
 
 #Import all needs
 import pandas as pd
+import folium
 import requests
 import math
 import matplotlib.pyplot as plt 
 from IPython.display import display
+
 
 #Ask User for inital location
 place_name = input("Please enter your city & state abreviation (ie. Ames, IA)")
@@ -66,10 +68,7 @@ def haversine_distance(lat1, lon1, lat2, lon2):
 
     return distance
 
-#read tempdata
-tem='archesnp.csv'
-
-
+#read in temp data
 dft = pd.read_csv('tempdata.csv')
 
 #comment out as not needed to run everytime
@@ -123,29 +122,44 @@ df = pd.read_csv('npdata.csv')
 df["miles"] = 0
 
 for i,row in df.iterrows(): 
-    lat = df.at[i,"parklat"]
-    lon = df.at[i,"parklon"]
-    distance = haversine_distance(startlat, startlon, lat, lon)
+    latnew = df.at[i,"parklat"]
+    lonnew = df.at[i,"parklon"]
+    distance = haversine_distance(startlat, startlon, latnew, lonnew)
     df.loc[i, "miles"] = distance 
 
 #print(df.nsmallest(3, 'miles'))
 
 #sort by the closests parks and print out those names
 sorted_df = df.sort_values(by=['miles'])
-# Get the index of rows with the smallest 'Value1'
+
+# Get the index of rows with the smallest value 
 nearpark_index = sorted_df.index[0]
 nextpark_index = sorted_df.index[1]
 farpark_index = sorted_df.index[2]
 
-
-
-# You can also retrieve the corresponding row(s) with the smallest value
-#smallest_value_rows = sorted_df.loc[smallest_value_indices]
-
-nearpark = sorted_df.at[nearpark_index,"ParkName"] #Fix from hardcode to pull out index values of min
+#pull out the park names
+nearpark = sorted_df.at[nearpark_index,"ParkName"]
 nextpark = sorted_df.at[nextpark_index,"ParkName"]
 farpark = sorted_df.at[farpark_index,"ParkName"]
 
 #display(sorteddf)
 print("The closest parks are:", nearpark, ",", nextpark,", and", farpark)
 
+#pull out lat & lon for those parks and add to map
+lat1 = df.at[nearpark_index,"parklat"]
+lon1 = df.at[nearpark_index,"parklon"]
+
+lat2 = df.at[nextpark_index,"parklat"]
+lon2 = df.at[nextpark_index,"parklon"]
+
+lat3 = df.at[farpark_index,"parklat"]
+lon3 = df.at[farpark_index,"parklon"]
+
+# make a basemap and zoom to an area
+m = folium.Map(location=[lat, lon], zoom_start=5)  # Adjust latitude, longitude, and zoom level as needed
+folium.Marker([lat, lon], popup="Your Location").add_to(m)
+folium.Marker([lat1, lon1], popup="Marker 1").add_to(m)
+folium.Marker([lat2, lon2], popup="Marker 2").add_to(m)
+folium.Marker([lat3, lon3], popup="Marker 3").add_to(m)
+
+m.save('map.html')

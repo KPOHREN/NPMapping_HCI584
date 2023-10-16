@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c16643a3132e9e0a4f0cf0292547d693 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_c16643a3132e9e0a4f0cf0292547d693" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c16643a3132e9e0a4f0cf0292547d693 = L.map(
+                "map_c16643a3132e9e0a4f0cf0292547d693",
+                {
+                    center: [46.5205224, -94.288609],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_537e5c2ab3a1faf5b59a83f1e7084803 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_c16643a3132e9e0a4f0cf0292547d693);
+        
+    
+            var marker_42fa4bec6cb124c34917bf2c861acf48 = L.marker(
+                [46.5205224, -94.288609],
+                {}
+            ).addTo(map_c16643a3132e9e0a4f0cf0292547d693);
+        
+    
+        var popup_4ac3936c817b6193995a624b19bdd04b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_adbfe6d427ef940b2b1883be017bef09 = $(`<div id="html_adbfe6d427ef940b2b1883be017bef09" style="width: 100.0%; height: 100.0%;">Your Location</div>`)[0];
+                popup_4ac3936c817b6193995a624b19bdd04b.setContent(html_adbfe6d427ef940b2b1883be017bef09);
+            
+        
+
+        marker_42fa4bec6cb124c34917bf2c861acf48.bindPopup(popup_4ac3936c817b6193995a624b19bdd04b)
+        ;
+
+        
+    
+    
+            var marker_e58f2d8cbc91eb2fc0c2ee18df6f7ac0 = L.marker(
+                [48.4831, -92.8381],
+                {}
+            ).addTo(map_c16643a3132e9e0a4f0cf0292547d693);
+        
+    
+        var popup_42d877606ae047f900b116193ca15d5c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d8295a8ca75d0d211dfaaa393b2c5895 = $(`<div id="html_d8295a8ca75d0d211dfaaa393b2c5895" style="width: 100.0%; height: 100.0%;">Marker 1</div>`)[0];
+                popup_42d877606ae047f900b116193ca15d5c.setContent(html_d8295a8ca75d0d211dfaaa393b2c5895);
+            
+        
+
+        marker_e58f2d8cbc91eb2fc0c2ee18df6f7ac0.bindPopup(popup_42d877606ae047f900b116193ca15d5c)
+        ;
+
+        
+    
+    
+            var marker_d5cd600ed02bcb4484968864065db3cd = L.marker(
+                [48.011, -88.8278],
+                {}
+            ).addTo(map_c16643a3132e9e0a4f0cf0292547d693);
+        
+    
+        var popup_3e2d02ea23a1be678148b2a1b9ccfceb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_179d37f26422af228d49c3682fdd0b8a = $(`<div id="html_179d37f26422af228d49c3682fdd0b8a" style="width: 100.0%; height: 100.0%;">Marker 2</div>`)[0];
+                popup_3e2d02ea23a1be678148b2a1b9ccfceb.setContent(html_179d37f26422af228d49c3682fdd0b8a);
+            
+        
+
+        marker_d5cd600ed02bcb4484968864065db3cd.bindPopup(popup_3e2d02ea23a1be678148b2a1b9ccfceb)
+        ;
+
+        
+    
+    
+            var marker_439789776358a3287743154386ebd8c9 = L.marker(
+                [43.8554, -102.3397],
+                {}
+            ).addTo(map_c16643a3132e9e0a4f0cf0292547d693);
+        
+    
+        var popup_63e1c029c4ed8710743aa6078d86a845 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0208058ffb2f92fe5d495011e7db4011 = $(`<div id="html_0208058ffb2f92fe5d495011e7db4011" style="width: 100.0%; height: 100.0%;">Marker 3</div>`)[0];
+                popup_63e1c029c4ed8710743aa6078d86a845.setContent(html_0208058ffb2f92fe5d495011e7db4011);
+            
+        
+
+        marker_439789776358a3287743154386ebd8c9.bindPopup(popup_63e1c029c4ed8710743aa6078d86a845)
+        ;
+
+        
+    
+</script>
+</html>
