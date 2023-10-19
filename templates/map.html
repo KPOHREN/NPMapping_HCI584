@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Folium Map</title>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        #map { height: 500px; }
+        form {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        label {
+            margin-right: 10px;
+        }
+        input[type="text"] {
+            width: 4em;
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form action="/" method="GET">
+        <label for="lat">Lat:</label>
+        <input type="text" id="lat" name="lat" value="{{ lat|default(40) }}">
+        <label for="lon">Lon:</label>
+        <input type="text" id="lon" name="lon" value="{{ lon|default(-90) }}">
+        <input type="submit" value="Go!">
+    </form>
+
+    <div id="map">{{ map|safe }}</div>
+    
+</body>
+</html>
