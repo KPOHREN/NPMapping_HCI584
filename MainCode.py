@@ -10,8 +10,9 @@ from IPython.display import display
 from flask import Flask, render_template, request
 import folium
 
+
 #defs at top
-def geocode_place(place_name):
+def geocode_place(place_name): #MAY NOT NEED ANYMORE
     base_url = "https://geocode.maps.co/search"  # free geocoding service, w/o need for API key!
     params = {"q": place_name}
     
@@ -52,9 +53,77 @@ def haversine_distance(lat1, lon1, lat2, lon2):
 
     return distance
 
-# START of MAIN CODE
+app = Flask(__name__)
 
+@app.route('/', methods=['GET', 'POST'])
+def city_location():
+    if request.method == 'POST':
+        city = request.form.get('city')
+        state = request.form.get('state')
 
+        # Use a geocoding service to convert the city and state into coordinates
+        response = requests.get(f"https://nominatim.openstreetmap.org/search?format=json&q={city},+{state}")
+        data = response.json()
+
+        if data:
+            lat = float(data[0]['lat'])
+            lon = float(data[0]['lon'])
+            
+            #read in Nat Park Locations
+            df = pd.read_csv('npdata.csv')
+
+            #create new column to iterate through finding the distance to all parks
+            df["miles"] = 0
+
+            for i,row in df.iterrows(): 
+                latnew = df.at[i,"parklat"]
+                lonnew = df.at[i,"parklon"]
+                distance = haversine_distance(lat, lon, latnew, lonnew)
+                df.loc[i, "miles"] = distance 
+
+            #sort by the closests parks and print out those names
+            sorted_df = df.sort_values(by=['miles'])
+
+            #re-indexing the df so that the closest park is at row 0
+            sorted_df = sorted_df.reset_index(drop=True)
+
+            #pull out lat & lon for those parks and add to map
+            lat1 = sorted_df.iloc[0]['parklat']
+            lon1 = sorted_df.iloc[0]['parklon']
+
+            lat2 = sorted_df.iloc[1]['parklat']
+            lon2 = sorted_df.iloc[1]['parklon']
+
+            lat3 = sorted_df.iloc[2]['parklat']
+            lon3 = sorted_df.iloc[2]['parklon']
+            
+            # Create a Folium map centered at the city's location
+            my_map = folium.Map(location=[lat, lon], zoom_start=8)    
+
+            # add a marker for user location
+            folium.Marker([lat, lon], popup="Your Location").add_to(my_map)
+            folium.Marker([lat1, lon1], popup="Closest National Park").add_to(my_map)
+            folium.Marker([lat2, lon2], popup="Second Closest National Park").add_to(my_map)
+            folium.Marker([lat3, lon3], popup="Third Closest National Park").add_to(my_map)
+
+            return my_map._repr_html_()
+
+    return '''
+        <form method="post">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+            <br>
+            <label for="state">State Abbreviation:</label>
+            <input type="text" id="state" name="state" required>
+            <br>
+            <input type="submit" value="Plot on Map">
+        </form>
+    '''
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+    
 #read in temp data
 dft = pd.read_csv('tempdata.csv')
 
@@ -102,74 +171,3 @@ dfp = pd.read_csv('precipdata.csv')
     # Close the plot to release resources
     #plt.close()
 
-app = Flask(__name__)
-
-@app.route('/', methods=['GET'])
-def map():
-        #Ask User for initial location
-        while True:
-            place_name = input("Please enter your city & state abbreviation (ie. Ames, IA)")
-
-            #place_name = "Dubuque, IA"
-            lat, lon = geocode_place(place_name)
-
-            if lat is not None and lon is not None:
-                print(f"Location: {place_name}")
-                print(f"Latitude: {lat}")
-                print(f"Longitude: {lon}")
-                startlat = float(lat)
-                startlon = float(lon)
-                break
-            else:
-                print(f"Geocoding for {place_name} not found or an error occurred.")
-                print("Please try again")
-        #read in Nat Park Locations
-        df = pd.read_csv('npdata.csv')
-
-        #create new column to iterate through finding the distance to all parks
-        df["miles"] = 0
-
-        for i,row in df.iterrows(): 
-            latnew = df.at[i,"parklat"]
-            lonnew = df.at[i,"parklon"]
-            distance = haversine_distance(startlat, startlon, latnew, lonnew)
-            df.loc[i, "miles"] = distance 
-
-        #sort by the closests parks and print out those names
-        sorted_df = df.sort_values(by=['miles'])
-
-
-        #re-indexing the df so that the closest park is at row 0
-        sorted_df = sorted_df.reset_index(drop=True)
-
-        #you can get a column value for a rown index with iloc
-        nearpark = sorted_df.iloc[0]['ParkName']
-        nextpark = sorted_df.iloc[1]['ParkName']
-        farpark = sorted_df.iloc[2]['ParkName']
-        print("The closest parks are:", nearpark, ",", nextpark,", and", farpark)
-
-        #pull out lat & lon for those parks and add to map
-        lat1 = sorted_df.iloc[0]['parklat']
-        lon1 = sorted_df.iloc[0]['parklon']
-
-        lat2 = sorted_df.iloc[1]['parklat']
-        lon2 = sorted_df.iloc[1]['parklon']
-
-        lat3 = sorted_df.iloc[2]['parklat']
-        lon3 = sorted_df.iloc[2]['parklon']
-        map = folium.Map(location=[lat, lon], zoom_start=5)
-
-        # add a marker for user location
-        folium.Marker([lat, lon],  tooltip="Your Location", popup=f"{lat}\n{lon}").add_to(map)
-        #folium.Marker([lat, lon], popup="Your Location").add_to(map)
-        folium.Marker([lat1, lon1], popup="Marker 1").add_to(map)
-        folium.Marker([lat2, lon2], popup="Marker 2").add_to(map)
-        folium.Marker([lat3, lon3], popup="Marker 3").add_to(map)
-
-        map_as_html = map._repr_html_() # covert to html so it can live in a html file
-        
-        # this will inline the folium html map and the lat/lon values
-        return render_template('map.html', map=map_as_html)
-
-if __name__ == '__main__':
-    app.run(debug=False)
