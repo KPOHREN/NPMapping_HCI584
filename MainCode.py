@@ -7,13 +7,10 @@ import requests
 import math
 import matplotlib.pyplot as plt 
 from IPython.display import display
+from flask import Flask, render_template, request
+import folium
 
-
-#Ask User for inital location
-place_name = input("Please enter your city & state abreviation (ie. Ames, IA)")
-
-##todo - CHECK that city and state are in a valid format
-
+#defs at top
 def geocode_place(place_name):
     base_url = "https://geocode.maps.co/search"  # free geocoding service, w/o need for API key!
     params = {"q": place_name}
@@ -32,19 +29,6 @@ def geocode_place(place_name):
     
     # Return None if no data or an error occurred
     return None, None
-
-#place_name = "Dubuque, IA"
-lat, lon = geocode_place(place_name)
-
-if lat is not None and lon is not None:
-    print(f"Location: {place_name}")
-    print(f"Latitude: {lat}")
-    print(f"Longitude: {lon}")
-    startlat = float(lat)
-    startlon = float(lon)
-else:
-    print(f"Geocoding for {place_name} not found or an error occurred.")
-    
 
 #calculate distance between two locations
 def haversine_distance(lat1, lon1, lat2, lon2):
@@ -67,6 +51,32 @@ def haversine_distance(lat1, lon1, lat2, lon2):
     distance = round(earth_radius * c)
 
     return distance
+
+# START of MAIN CODE
+
+#Ask User for initial location
+while True:
+    place_name = input("Please enter your city & state abbreviation (ie. Ames, IA)")
+
+    ##todo - CHECK that city and state are in a valid format
+    # You could do a sanity check on the input sth like a bunch of space separated words, followed by a comma
+    # followed by a 2 letter state code but as the geo service will return None if it can't find the place
+    # you could just print out an error (and what the correct format needs to be) and the repeat the input
+
+    #place_name = "Dubuque, IA"
+    lat, lon = geocode_place(place_name)
+
+    if lat is not None and lon is not None:
+        print(f"Location: {place_name}")
+        print(f"Latitude: {lat}")
+        print(f"Longitude: {lon}")
+        startlat = float(lat)
+        startlon = float(lon)
+        break
+    else:
+        print(f"Geocoding for {place_name} not found or an error occurred.")
+        print("Please try again")
+
 
 #read in temp data
 dft = pd.read_csv('tempdata.csv')
@@ -127,39 +137,46 @@ for i,row in df.iterrows():
     distance = haversine_distance(startlat, startlon, latnew, lonnew)
     df.loc[i, "miles"] = distance 
 
-#print(df.nsmallest(3, 'miles'))
-
 #sort by the closests parks and print out those names
 sorted_df = df.sort_values(by=['miles'])
 
-# Get the index of rows with the smallest value 
-nearpark_index = sorted_df.index[0]
-nextpark_index = sorted_df.index[1]
-farpark_index = sorted_df.index[2]
 
-#pull out the park names
-nearpark = sorted_df.at[nearpark_index,"ParkName"]
-nextpark = sorted_df.at[nextpark_index,"ParkName"]
-farpark = sorted_df.at[farpark_index,"ParkName"]
+#re-indexing the df so that the closest park is at row 0
+sorted_df = sorted_df.reset_index(drop=True)
 
-#display(sorteddf)
+#you can get a column value for a rown index with iloc
+nearpark = sorted_df.iloc[0]['ParkName']
+nextpark = sorted_df.iloc[1]['ParkName']
+farpark = sorted_df.iloc[2]['ParkName']
 print("The closest parks are:", nearpark, ",", nextpark,", and", farpark)
 
 #pull out lat & lon for those parks and add to map
-lat1 = df.at[nearpark_index,"parklat"]
-lon1 = df.at[nearpark_index,"parklon"]
+lat1 = sorted_df.iloc[0]['parklat']
+lon1 = sorted_df.iloc[0]['parklon']
 
-lat2 = df.at[nextpark_index,"parklat"]
-lon2 = df.at[nextpark_index,"parklon"]
+lat2 = sorted_df.iloc[1]['parklat']
+lon2 = sorted_df.iloc[1]['parklon']
 
-lat3 = df.at[farpark_index,"parklat"]
-lon3 = df.at[farpark_index,"parklon"]
+lat3 = sorted_df.iloc[2]['parklat']
+lon3 = sorted_df.iloc[2]['parklon']
 
-# make a basemap and zoom to an area
-m = folium.Map(location=[lat, lon], zoom_start=5)  # Adjust latitude, longitude, and zoom level as needed
-folium.Marker([lat, lon], popup="Your Location").add_to(m)
-folium.Marker([lat1, lon1], popup="Marker 1").add_to(m)
-folium.Marker([lat2, lon2], popup="Marker 2").add_to(m)
-folium.Marker([lat3, lon3], popup="Marker 3").add_to(m)
+app = Flask(__name__)
 
-m.save('map.html')
+@app.route('/', methods=['GET'])
+def map(lat, lon, lat1, lon1, lat2, lon2, lat3, lon3):
+        map = folium.Map(location=[lat, lon], zoom_start=5)
+
+        # add a marker for user location
+        folium.Marker([lat, lon],  tooltip="Your Location", popup=f"{lat}\n{lon}").add_to(map)
+        #folium.Marker([lat, lon], popup="Your Location").add_to(map)
+        folium.Marker([lat1, lon1], popup="Marker 1").add_to(map)
+        folium.Marker([lat2, lon2], popup="Marker 2").add_to(map)
+        folium.Marker([lat3, lon3], popup="Marker 3").add_to(map)
+
+        map_as_html = map._repr_html_() # covert to html so it can live in a html file
+        
+        # this will inline the folium html map and the lat/lon values
+        return render_template('map.html', map=map_as_html)
+
+if __name__ == '__main__':
+    app.run(debug=False)
