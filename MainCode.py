@@ -54,29 +54,6 @@ def haversine_distance(lat1, lon1, lat2, lon2):
 
 # START of MAIN CODE
 
-#Ask User for initial location
-while True:
-    place_name = input("Please enter your city & state abbreviation (ie. Ames, IA)")
-
-    ##todo - CHECK that city and state are in a valid format
-    # You could do a sanity check on the input sth like a bunch of space separated words, followed by a comma
-    # followed by a 2 letter state code but as the geo service will return None if it can't find the place
-    # you could just print out an error (and what the correct format needs to be) and the repeat the input
-
-    #place_name = "Dubuque, IA"
-    lat, lon = geocode_place(place_name)
-
-    if lat is not None and lon is not None:
-        print(f"Location: {place_name}")
-        print(f"Latitude: {lat}")
-        print(f"Longitude: {lon}")
-        startlat = float(lat)
-        startlon = float(lon)
-        break
-    else:
-        print(f"Geocoding for {place_name} not found or an error occurred.")
-        print("Please try again")
-
 
 #read in temp data
 dft = pd.read_csv('tempdata.csv')
@@ -124,46 +101,62 @@ dfp = pd.read_csv('precipdata.csv')
     
     # Close the plot to release resources
     #plt.close()
-    
-#read in Nat Park Locations
-df = pd.read_csv('npdata.csv')
-
-#create new column to iterate through finding the distance to all parks
-df["miles"] = 0
-
-for i,row in df.iterrows(): 
-    latnew = df.at[i,"parklat"]
-    lonnew = df.at[i,"parklon"]
-    distance = haversine_distance(startlat, startlon, latnew, lonnew)
-    df.loc[i, "miles"] = distance 
-
-#sort by the closests parks and print out those names
-sorted_df = df.sort_values(by=['miles'])
-
-
-#re-indexing the df so that the closest park is at row 0
-sorted_df = sorted_df.reset_index(drop=True)
-
-#you can get a column value for a rown index with iloc
-nearpark = sorted_df.iloc[0]['ParkName']
-nextpark = sorted_df.iloc[1]['ParkName']
-farpark = sorted_df.iloc[2]['ParkName']
-print("The closest parks are:", nearpark, ",", nextpark,", and", farpark)
-
-#pull out lat & lon for those parks and add to map
-lat1 = sorted_df.iloc[0]['parklat']
-lon1 = sorted_df.iloc[0]['parklon']
-
-lat2 = sorted_df.iloc[1]['parklat']
-lon2 = sorted_df.iloc[1]['parklon']
-
-lat3 = sorted_df.iloc[2]['parklat']
-lon3 = sorted_df.iloc[2]['parklon']
 
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
-def map(lat, lon, lat1, lon1, lat2, lon2, lat3, lon3):
+def map():
+        #Ask User for initial location
+        while True:
+            place_name = input("Please enter your city & state abbreviation (ie. Ames, IA)")
+
+            #place_name = "Dubuque, IA"
+            lat, lon = geocode_place(place_name)
+
+            if lat is not None and lon is not None:
+                print(f"Location: {place_name}")
+                print(f"Latitude: {lat}")
+                print(f"Longitude: {lon}")
+                startlat = float(lat)
+                startlon = float(lon)
+                break
+            else:
+                print(f"Geocoding for {place_name} not found or an error occurred.")
+                print("Please try again")
+        #read in Nat Park Locations
+        df = pd.read_csv('npdata.csv')
+
+        #create new column to iterate through finding the distance to all parks
+        df["miles"] = 0
+
+        for i,row in df.iterrows(): 
+            latnew = df.at[i,"parklat"]
+            lonnew = df.at[i,"parklon"]
+            distance = haversine_distance(startlat, startlon, latnew, lonnew)
+            df.loc[i, "miles"] = distance 
+
+        #sort by the closests parks and print out those names
+        sorted_df = df.sort_values(by=['miles'])
+
+
+        #re-indexing the df so that the closest park is at row 0
+        sorted_df = sorted_df.reset_index(drop=True)
+
+        #you can get a column value for a rown index with iloc
+        nearpark = sorted_df.iloc[0]['ParkName']
+        nextpark = sorted_df.iloc[1]['ParkName']
+        farpark = sorted_df.iloc[2]['ParkName']
+        print("The closest parks are:", nearpark, ",", nextpark,", and", farpark)
+
+        #pull out lat & lon for those parks and add to map
+        lat1 = sorted_df.iloc[0]['parklat']
+        lon1 = sorted_df.iloc[0]['parklon']
+
+        lat2 = sorted_df.iloc[1]['parklat']
+        lon2 = sorted_df.iloc[1]['parklon']
+
+        lat3 = sorted_df.iloc[2]['parklat']
+        lon3 = sorted_df.iloc[2]['parklon']
         map = folium.Map(location=[lat, lon], zoom_start=5)
 
         # add a marker for user location
