@@ -101,10 +101,10 @@ def city_location():
             my_map = folium.Map(location=[lat, lon], zoom_start=8)    
 
             # add a marker for user location
-            folium.Marker([lat, lon], popup="Your Location").add_to(my_map)
-            folium.Marker([lat1, lon1], popup="Closest National Park").add_to(my_map)
-            folium.Marker([lat2, lon2], popup="Second Closest National Park").add_to(my_map)
-            folium.Marker([lat3, lon3], popup="Third Closest National Park").add_to(my_map)
+            folium.Marker([lat, lon], popup="Your Location", tooltip="Your Location", icon=folium.Icon(color='purple')).add_to(my_map)
+            
+            for index, row in sorted_df.iterrows():
+                folium.Marker([row['parklat'], row['parklon']], popup=row['ParkName'], tooltip=("Miles from you:", row['miles']), icon=folium.Icon(color='green')).add_to(my_map)
 
             return my_map._repr_html_()
 
@@ -116,7 +116,7 @@ def city_location():
             <label for="state">State Abbreviation:</label>
             <input type="text" id="state" name="state" required>
             <br>
-            <input type="submit" value="Plot on Map">
+            <input type="submit" value="Find National Parks">
         </form>
     '''
 
