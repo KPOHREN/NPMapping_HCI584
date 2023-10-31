@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 from IPython.display import display
 from flask import Flask, render_template, request
 import folium
+from folium import IFrame
 
 
 #defs at top
@@ -86,25 +87,21 @@ def city_location():
 
             #re-indexing the df so that the closest park is at row 0
             sorted_df = sorted_df.reset_index(drop=True)
-
-            #pull out lat & lon for those parks and add to map
-            lat1 = sorted_df.iloc[0]['parklat']
-            lon1 = sorted_df.iloc[0]['parklon']
-
-            lat2 = sorted_df.iloc[1]['parklat']
-            lon2 = sorted_df.iloc[1]['parklon']
-
-            lat3 = sorted_df.iloc[2]['parklat']
-            lon3 = sorted_df.iloc[2]['parklon']
             
             # Create a Folium map centered at the city's location
-            my_map = folium.Map(location=[lat, lon], zoom_start=8)    
+            my_map = folium.Map(location=[lat, lon], zoom_start=8)
+            
+            html = '<h1>This is your location</h1>'
+            html += '<p>This is a picture of an Excavator.</p>'
+            html += '<img src="test.jpg" alt="excavator image" width="200" height="200">'
+            iframe = IFrame(html=html, width=300, height=300)
+            popup_test = folium.Popup(iframe, max_width=300)    
 
             # add a marker for user location
-            folium.Marker([lat, lon], popup="Your Location", tooltip="Your Location", icon=folium.Icon(color='purple')).add_to(my_map)
+            folium.Marker([lat, lon], popup=popup_test, tooltip="Your Location", icon=folium.Icon(color='purple')).add_to(my_map)
             
             for index, row in sorted_df.iterrows():
-                folium.Marker([row['parklat'], row['parklon']], popup=row['ParkName'], tooltip=("Miles from you:", row['miles']), icon=folium.Icon(color='green')).add_to(my_map)
+                folium.Marker([row['parklat'], row['parklon']], popup=row['ParkName'], tooltip=(row['ParkName'],"Miles from you:", row['miles']), icon=folium.Icon(color='green')).add_to(my_map)
 
             return my_map._repr_html_()
 
