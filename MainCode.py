@@ -89,7 +89,7 @@ def city_location():
             sorted_df = sorted_df.reset_index(drop=True)
             
             # Create a Folium map centered at the city's location
-            my_map = folium.Map(location=[lat, lon], zoom_start=8)
+            my_map = folium.Map(location=[lat, lon], zoom_start=10)
             
             html = '<h1>This is your location</h1>'
             html += '<p>This is a picture of an Excavator.</p>'
