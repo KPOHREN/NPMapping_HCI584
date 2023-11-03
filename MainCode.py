@@ -7,14 +7,13 @@ import requests
 import math
 import matplotlib.pyplot as plt 
 from IPython.display import display
+from flask import Flask, render_template, request
+import folium
+from folium import IFrame
 
 
-#Ask User for inital location
-place_name = input("Please enter your city & state abreviation (ie. Ames, IA)")
-
-##todo - CHECK that city and state are in a valid format
-
-def geocode_place(place_name):
+#defs at top
+def geocode_place(place_name): #MAY NOT NEED ANYMORE
     base_url = "https://geocode.maps.co/search"  # free geocoding service, w/o need for API key!
     params = {"q": place_name}
     
@@ -32,19 +31,6 @@ def geocode_place(place_name):
     
     # Return None if no data or an error occurred
     return None, None
-
-#place_name = "Dubuque, IA"
-lat, lon = geocode_place(place_name)
-
-if lat is not None and lon is not None:
-    print(f"Location: {place_name}")
-    print(f"Latitude: {lat}")
-    print(f"Longitude: {lon}")
-    startlat = float(lat)
-    startlon = float(lon)
-else:
-    print(f"Geocoding for {place_name} not found or an error occurred.")
-    
 
 #calculate distance between two locations
 def haversine_distance(lat1, lon1, lat2, lon2):
@@ -68,6 +54,73 @@ def haversine_distance(lat1, lon1, lat2, lon2):
 
     return distance
 
+app = Flask(__name__)
+
+@app.route('/', methods=['GET', 'POST'])
+def city_location():
+    if request.method == 'POST':
+        city = request.form.get('city')
+        state = request.form.get('state')
+
+        # Use a geocoding service to convert the city and state into coordinates
+        response = requests.get(f"https://nominatim.openstreetmap.org/search?format=json&q={city},+{state}")
+        data = response.json()
+
+        if data:
+            lat = float(data[0]['lat'])
+            lon = float(data[0]['lon'])
+            
+            #read in Nat Park Locations
+            df = pd.read_csv('npdata.csv')
+
+            #create new column to iterate through finding the distance to all parks
+            df["miles"] = 0
+
+            for i,row in df.iterrows(): 
+                latnew = df.at[i,"parklat"]
+                lonnew = df.at[i,"parklon"]
+                distance = haversine_distance(lat, lon, latnew, lonnew)
+                df.loc[i, "miles"] = distance 
+
+            #sort by the closests parks and print out those names
+            sorted_df = df.sort_values(by=['miles'])
+
+            #re-indexing the df so that the closest park is at row 0
+            sorted_df = sorted_df.reset_index(drop=True)
+            
+            # Create a Folium map centered at the city's location
+            my_map = folium.Map(location=[lat, lon], zoom_start=10)
+            
+            html = '<h1>This is your location</h1>'
+            html += '<p>This is a picture of an Excavator.</p>'
+            html += '<img src="test.jpg" alt="excavator image" width="200" height="200">'
+            iframe = IFrame(html=html, width=300, height=300)
+            popup_test = folium.Popup(iframe, max_width=300)    
+
+            # add a marker for user location
+            folium.Marker([lat, lon], popup=popup_test, tooltip="Your Location", icon=folium.Icon(color='purple')).add_to(my_map)
+            
+            for index, row in sorted_df.iterrows():
+                folium.Marker([row['parklat'], row['parklon']], popup=row['ParkName'], tooltip=(row['ParkName'],"Miles from you:", row['miles']), icon=folium.Icon(color='green')).add_to(my_map)
+
+            return my_map._repr_html_()
+
+    return '''
+        <form method="post">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+            <br>
+            <label for="state">State Abbreviation:</label>
+            <input type="text" id="state" name="state" required>
+            <br>
+            <input type="submit" value="Find National Parks">
+        </form>
+    '''
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
+    
 #read in temp data
 dft = pd.read_csv('tempdata.csv')
 
@@ -114,52 +167,4 @@ dfp = pd.read_csv('precipdata.csv')
     
     # Close the plot to release resources
     #plt.close()
-    
-#read in Nat Park Locations
-df = pd.read_csv('npdata.csv')
 
-#create new column to iterate through finding the distance to all parks
-df["miles"] = 0
-
-for i,row in df.iterrows(): 
-    latnew = df.at[i,"parklat"]
-    lonnew = df.at[i,"parklon"]
-    distance = haversine_distance(startlat, startlon, latnew, lonnew)
-    df.loc[i, "miles"] = distance 
-
-#print(df.nsmallest(3, 'miles'))
-
-#sort by the closests parks and print out those names
-sorted_df = df.sort_values(by=['miles'])
-
-# Get the index of rows with the smallest value 
-nearpark_index = sorted_df.index[0]
-nextpark_index = sorted_df.index[1]
-farpark_index = sorted_df.index[2]
-
-#pull out the park names
-nearpark = sorted_df.at[nearpark_index,"ParkName"]
-nextpark = sorted_df.at[nextpark_index,"ParkName"]
-farpark = sorted_df.at[farpark_index,"ParkName"]
-
-#display(sorteddf)
-print("The closest parks are:", nearpark, ",", nextpark,", and", farpark)
-
-#pull out lat & lon for those parks and add to map
-lat1 = df.at[nearpark_index,"parklat"]
-lon1 = df.at[nearpark_index,"parklon"]
-
-lat2 = df.at[nextpark_index,"parklat"]
-lon2 = df.at[nextpark_index,"parklon"]
-
-lat3 = df.at[farpark_index,"parklat"]
-lon3 = df.at[farpark_index,"parklon"]
-
-# make a basemap and zoom to an area
-m = folium.Map(location=[lat, lon], zoom_start=5)  # Adjust latitude, longitude, and zoom level as needed
-folium.Marker([lat, lon], popup="Your Location").add_to(m)
-folium.Marker([lat1, lon1], popup="Marker 1").add_to(m)
-folium.Marker([lat2, lon2], popup="Marker 2").add_to(m)
-folium.Marker([lat3, lon3], popup="Marker 3").add_to(m)
-
-m.save('map.html')
