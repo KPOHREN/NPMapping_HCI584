@@ -1,57 +1,57 @@
-ParkName,State,parklat,parklon,AnnualVisitors, ClosestAirportCity, airportlat, airportlon 
-Acadia National Park, Maine,44.3386,-68.2733,3500000, Bar Harbor,44.3876,-68.2039
-Arches National Park, Utah,38.7331,-109.5925,1700000, Moab,38.5733,-109.5498
-Badlands National Park, South Dakota,43.8554,-102.3397,1100000, Rapid City,44.076,-103.228
-Big Bend National Park, Texas,29.2504,-103.25,463832, Midland/Odessa,31.8457,-102.3676
-Biscayne National Park, Florida,25.415,-80.335,708522, Miami,25.7617,-80.1918
-Black Canyon of the Gunnison National Park, Colorado,38.5704,-107.7247,432818, Montrose,38.4783,-107.8762
-Bryce Canyon National Park, Utah,37.593,-112.1871,2500000, Cedar City,37.6775,-113.0619
-Canyonlands National Park, Utah,38.3269,-109.8783,820659, Moab,38.5733,-109.5498
-Capitol Reef National Park, Utah,38.3661,-111.2615,1200000, Hanksville,38.3714,-110.835
-Carlsbad Caverns National Park, New Mexico,32.1753,-104.4437,440691, Carlsbad,32.4207,-104.2288
-Channel Islands National Park, California,34.005,-119.783,364807, Oxnard,34.1975,-119.1771
-Congaree National Park, South Carolina,33.789,-80.7819,145929, Columbia,34.0007,-81.0348
-Crater Lake National Park, Oregon,42.8684,-122.1685,776202, Medford/Klamath Falls,42.3265,-122.8756
-Cuyahoga Valley National Park, Ohio,41.2808,-81.5678,2800000, Cleveland/Akron,41.0814,-81.519
-Death Valley National Park, California/Nevada,36.5323,-116.9325,1600000, Las Vegas,36.1699,-115.1398
-Everglades National Park, Florida,25.2866,-80.8987,1100000, Miami,25.7617,-80.1918
-Gates of the Arctic National Park and Preserve, Alaska,67.8819,-153.1875,11177, Fairbanks,64.8378,-147.7164
-Gateway Arch National Park, Missouri,38.6247,-90.1848,2100000, St. Louis,38.627,-90.1994
-Glacier National Park, Montana,48.7596,-113.787,3100000, Kalispell,48.2026,-114.3122
-Grand Canyon National Park, Arizona,36.107,-112.113,6000000, Flagstaff,35.1983,-111.6513
-Grand Teton National Park, Wyoming,43.7412,-110.8029,3400000, Jackson Hole,43.4799,-110.7624
-Great Basin National Park, Nevada,38.9833,-114.3,131802, Ely,39.2487,-114.8878
-Great Sand Dunes National Park and Preserve, Colorado,37.791,-105.5943,527546, Alamosa,37.4694,-105.869
-Great Smoky Mountains National Park, North Carolina/Tennessee,35.6532,-83.507,12100000, Knoxville/Asheville,35.9606,-83.9207
-Guadalupe Mountains National Park, Texas,31.9231,-104.8645,189691, El Paso,31.7619,-106.485
-Haleakalā National Park, Hawaii,20.711,-156.2535,1000000, Kahului,20.8893,-156.4729
-Hot Springs National Park, Arkansas,34.5246,-93.0636,1600000, Little Rock,34.7465,-92.2896
-Indiana Dunes National Park, Indiana,41.6611,-87.0624,2200000, Chicago/Gary,41.602,-87.3372
-Isle Royale National Park, Michigan,48.011,-88.8278,26410, Houghton,47.1214,-88.5692
-Joshua Tree National Park, California,33.8734,-115.901,2400000, Palm Springs,33.8303,-116.5453
-Katmai National Park and Preserve, Alaska,58.6121,-155.0631,84167, King Salmon,58.6887,-156.6613
-Kenai Fjords National Park, Alaska,59.925,-149.7472,356601, Anchorage,61.2181,-149.9003
-Kings Canyon National Park, California,36.8879,-118.5551,632110, Fresno,36.7468,-119.7726
-Kobuk Valley National Park, Alaska,67.3356,-159.1277,15766, Kotzebue,66.8983,-162.5967
-Lake Clark National Park and Preserve, Alaska,60.4127,-154.3236,24198, Anchorage,61.2181,-149.9003
-Lassen Volcanic National Park, California,40.4977,-121.4207,517039, Redding,40.5865,-122.3917
-Mammoth Cave National Park, Kentucky,37.187,-86.1,558014, Nashville/Louisville,36.1628,-86.7816
-Mesa Verde National Park, Colorado,37.23,-108.4618,556203, Durango/Cortez,37.2753,-108.9211
-Mount Rainier National Park, Washington,46.86,-121.7044,1300000, Seattle/Tacoma,47.2529,-122.4443
-North Cascades National Park, Washington,48.7718,-121.2986,38208, Bellingham,48.7519,-122.4787
-Olympic National Park, Washington,47.6038,-123.4466,3400000, Seattle/Tacoma,47.6062,-122.3321
-Petrified Forest National Park, Arizona,35.0881,-109.7889,643588, Flagstaff,35.1983,-111.6513
-Pinnacles National Park, California,36.4906,-121.1825,233334, Monterey/Salinas,36.6777,-121.6555
-Redwood National and State Parks, California,41.2132,-124.0046,536297, Crescent City,41.7554,-124.2019
-Rocky Mountain National Park, Colorado,40.3428,-105.6836,4700000, Denver,39.7392,-104.9903
-Saguaro National Park, Arizona,32.2967,-111.1666,1000000, Tucson,32.2226,-110.9747
-Sequoia National Park, California,36.4864,-118.5658,1400000, Fresno,36.7468,-119.7726
-Shenandoah National Park, Virginia,38.2928,-78.6797,1400000, Charlottesville/Staunton,38.0293,-78.4767
-Theodore Roosevelt National Park, North Dakota,46.979,-103.5383,749389, Dickinson,46.8792,-102.7896
-Virgin Islands National Park, U.S. Virgin Islands,18.3425,-64.748,438215, St. Thomas/St. John,18.3358,-64.8964
-Voyageurs National Park, Minnesota,48.4831,-92.8381,260529, International Falls/Bemidji,48.601,-93.4105
-Wind Cave National Park, South Dakota,43.5695,-103.4787,645911, Rapid City,44.076,-103.228
-Wrangell-St. Elias National Park and Preserve, Alaska,61.7104,-142.9857,74518, Anchorage,61.2181,-149.9003
-Yellowstone National Park, Wyoming/Montana/Idaho,44.428,-110.5885,4800000, Bozeman,45.6797,-111.0386
-Yosemite National Park, California,37.8651,-119.5383,4800000, Fresno,36.7468,-119.7726
-Zion National Park, Utah,37.2982,-113.0263,4500000, St. George,37.0965,-113.5684
+ParkName,State,parklat,parklon,AnnualVisitors, ClosestAirportCity, airportlat, airportlon ,pname
+Acadia National Park, Maine,44.3386,-68.2733,3500000, Bar Harbor,44.3876,-68.2039,precipplot_AcadiaNationalPark.png
+Arches National Park, Utah,38.7331,-109.5925,1700000, Moab,38.5733,-109.5498,precipplot_ArchesNationalPark.png
+Badlands National Park, South Dakota,43.8554,-102.3397,1100000, Rapid City,44.076,-103.228,precipplot_BadlandsNationalPark.png
+Big Bend National Park, Texas,29.2504,-103.25,463832, Midland/Odessa,31.8457,-102.3676,precipplot_BigBendNationalPark.png
+Biscayne National Park, Florida,25.415,-80.335,708522, Miami,25.7617,-80.1918,precipplot_BiscayneNationalPark.png
+Black Canyon of the Gunnison National Park, Colorado,38.5704,-107.7247,432818, Montrose,38.4783,-107.8762,precipplot_BlackCanyonoftheGunnisonNationalPark.png
+Bryce Canyon National Park, Utah,37.593,-112.1871,2500000, Cedar City,37.6775,-113.0619,precipplot_BryceCanyonNationalPark.png
+Canyonlands National Park, Utah,38.3269,-109.8783,820659, Moab,38.5733,-109.5498,precipplot_CanyonlandsNationalPark.png
+Capitol Reef National Park, Utah,38.3661,-111.2615,1200000, Hanksville,38.3714,-110.835,precipplot_CapitolReefNationalPark.png
+Carlsbad Caverns National Park, New Mexico,32.1753,-104.4437,440691, Carlsbad,32.4207,-104.2288,precipplot_CarlsbadCavernsNationalPark.png
+Channel Islands National Park, California,34.005,-119.783,364807, Oxnard,34.1975,-119.1771,precipplot_ChannelIslandsNationalPark.png
+Congaree National Park, South Carolina,33.789,-80.7819,145929, Columbia,34.0007,-81.0348,precipplot_CongareeNationalPark.png
+Crater Lake National Park, Oregon,42.8684,-122.1685,776202, Medford/Klamath Falls,42.3265,-122.8756,precipplot_CraterLakeNationalPark.png
+Cuyahoga Valley National Park, Ohio,41.2808,-81.5678,2800000, Cleveland/Akron,41.0814,-81.519,precipplot_CuyahogaValleyNationalPark.png
+Death Valley National Park, California/Nevada,36.5323,-116.9325,1600000, Las Vegas,36.1699,-115.1398,precipplot_DeathValleyNationalPark.png
+Everglades National Park, Florida,25.2866,-80.8987,1100000, Miami,25.7617,-80.1918,precipplot_EvergladesNationalPark.png
+Gates of the Arctic National Park and Preserve, Alaska,67.8819,-153.1875,11177, Fairbanks,64.8378,-147.7164,precipplot_GatesoftheArcticNationalParkandPreserve.png
+Gateway Arch National Park, Missouri,38.6247,-90.1848,2100000, St. Louis,38.627,-90.1994,precipplot_GatewayArchNationalPark.png
+Glacier National Park, Montana,48.7596,-113.787,3100000, Kalispell,48.2026,-114.3122,precipplot_GlacierNationalPark.png
+Grand Canyon National Park, Arizona,36.107,-112.113,6000000, Flagstaff,35.1983,-111.6513,precipplot_GrandCanyonNationalPark.png
+Grand Teton National Park, Wyoming,43.7412,-110.8029,3400000, Jackson Hole,43.4799,-110.7624,precipplot_GrandTetonNationalPark.png
+Great Basin National Park, Nevada,38.9833,-114.3,131802, Ely,39.2487,-114.8878,precipplot_GreatBasinNationalPark.png
+Great Sand Dunes National Park and Preserve, Colorado,37.791,-105.5943,527546, Alamosa,37.4694,-105.869,precipplot_GreatSandDunesNationalParkandPreserve.png
+Great Smoky Mountains National Park, North Carolina/Tennessee,35.6532,-83.507,12100000, Knoxville/Asheville,35.9606,-83.9207,precipplot_GreatSmokyMountainsNationalPark.png
+Guadalupe Mountains National Park, Texas,31.9231,-104.8645,189691, El Paso,31.7619,-106.485,precipplot_GuadalupeMountainsNationalPark.png
+Haleakalā National Park, Hawaii,20.711,-156.2535,1000000, Kahului,20.8893,-156.4729,precipplot_Haleakal�NationalPark.png
+Hot Springs National Park, Arkansas,34.5246,-93.0636,1600000, Little Rock,34.7465,-92.2896,precipplot_HotSpringsNationalPark.png
+Indiana Dunes National Park, Indiana,41.6611,-87.0624,2200000, Chicago/Gary,41.602,-87.3372,precipplot_IndianaDunesNationalPark.png
+Isle Royale National Park, Michigan,48.011,-88.8278,26410, Houghton,47.1214,-88.5692,precipplot_IsleRoyaleNationalPark.png
+Joshua Tree National Park, California,33.8734,-115.901,2400000, Palm Springs,33.8303,-116.5453,precipplot_JoshuaTreeNationalPark.png
+Katmai National Park and Preserve, Alaska,58.6121,-155.0631,84167, King Salmon,58.6887,-156.6613,precipplot_KatmaiNationalParkandPreserve.png
+Kenai Fjords National Park, Alaska,59.925,-149.7472,356601, Anchorage,61.2181,-149.9003,precipplot_KenaiFjordsNationalPark.png
+Kings Canyon National Park, California,36.8879,-118.5551,632110, Fresno,36.7468,-119.7726,precipplot_KingsCanyonNationalPark.png
+Kobuk Valley National Park, Alaska,67.3356,-159.1277,15766, Kotzebue,66.8983,-162.5967,precipplot_KobukValleyNationalPark.png
+Lake Clark National Park and Preserve, Alaska,60.4127,-154.3236,24198, Anchorage,61.2181,-149.9003,precipplot_LakeClarkNationalParkandPreserve.png
+Lassen Volcanic National Park, California,40.4977,-121.4207,517039, Redding,40.5865,-122.3917,precipplot_LassenVolcanicNationalPark.png
+Mammoth Cave National Park, Kentucky,37.187,-86.1,558014, Nashville/Louisville,36.1628,-86.7816,precipplot_MammothCaveNationalPark.png
+Mesa Verde National Park, Colorado,37.23,-108.4618,556203, Durango/Cortez,37.2753,-108.9211,precipplot_MesaVerdeNationalPark.png
+Mount Rainier National Park, Washington,46.86,-121.7044,1300000, Seattle/Tacoma,47.2529,-122.4443,precipplot_MountRainierNationalPark.png
+North Cascades National Park, Washington,48.7718,-121.2986,38208, Bellingham,48.7519,-122.4787,precipplot_NorthCascadesNationalPark.png
+Olympic National Park, Washington,47.6038,-123.4466,3400000, Seattle/Tacoma,47.6062,-122.3321,precipplot_OlympicNationalPark.png
+Petrified Forest National Park, Arizona,35.0881,-109.7889,643588, Flagstaff,35.1983,-111.6513,precipplot_PetrifiedForestNationalPark.png
+Pinnacles National Park, California,36.4906,-121.1825,233334, Monterey/Salinas,36.6777,-121.6555,precipplot_PinnaclesNationalPark.png
+Redwood National and State Parks, California,41.2132,-124.0046,536297, Crescent City,41.7554,-124.2019,precipplot_RedwoodNationalandStateParks.png
+Rocky Mountain National Park, Colorado,40.3428,-105.6836,4700000, Denver,39.7392,-104.9903,precipplot_RockyMountainNationalPark.png
+Saguaro National Park, Arizona,32.2967,-111.1666,1000000, Tucson,32.2226,-110.9747,precipplot_SaguaroNationalPark.png
+Sequoia National Park, California,36.4864,-118.5658,1400000, Fresno,36.7468,-119.7726,precipplot_SequoiaNationalPark.png
+Shenandoah National Park, Virginia,38.2928,-78.6797,1400000, Charlottesville/Staunton,38.0293,-78.4767,precipplot_ShenandoahNationalPark.png
+Theodore Roosevelt National Park, North Dakota,46.979,-103.5383,749389, Dickinson,46.8792,-102.7896,precipplot_TheodoreRooseveltNationalPark.png
+Virgin Islands National Park, U.S. Virgin Islands,18.3425,-64.748,438215, St. Thomas/St. John,18.3358,-64.8964,precipplot_VirginIslandsNationalPark.png
+Voyageurs National Park, Minnesota,48.4831,-92.8381,260529, International Falls/Bemidji,48.601,-93.4105,precipplot_VoyageursNationalPark.png
+Wind Cave National Park, South Dakota,43.5695,-103.4787,645911, Rapid City,44.076,-103.228,precipplot_WindCaveNationalPark.png
+Wrangell-St. Elias National Park and Preserve, Alaska,61.7104,-142.9857,74518, Anchorage,61.2181,-149.9003,precipplot_WrangellStEliasNationalParkandPreserve.png
+Yellowstone National Park, Wyoming/Montana/Idaho,44.428,-110.5885,4800000, Bozeman,45.6797,-111.0386,precipplot_YellowstoneNationalPark.png
+Yosemite National Park, California,37.8651,-119.5383,4800000, Fresno,36.7468,-119.7726,precipplot_YosemiteNationalPark.png
+Zion National Park, Utah,37.2982,-113.0263,4500000, St. George,37.0965,-113.5684,precipplot_ZionNationalPark.png

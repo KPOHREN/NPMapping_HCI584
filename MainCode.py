@@ -89,20 +89,30 @@ def city_location():
             sorted_df = sorted_df.reset_index(drop=True)
             
             # Create a Folium map centered at the city's location
-            my_map = folium.Map(location=[lat, lon], zoom_start=10)
+            my_map = folium.Map(location=[lat, lon], zoom_start=5)
             
-            html = '<h1>This is your location</h1>'
-            html += '<p>This is a picture of an Excavator.</p>'
-            html += '<img src="test.jpg" alt="excavator image" width="200" height="200">'
-            iframe = IFrame(html=html, width=300, height=300)
-            popup_test = folium.Popup(iframe, max_width=300)    
+            #html = '<h1>This is your location</h1>'
+            #html += '<p>This is a picture of an Excavator.</p>'
+            #html += '<img src="/static/test.jpg" alt="excavator image" width="200" height="200">'
+            #popup_test = folium.Popup(html, max_width=300)    # Don't use iframe or the img won't work (not sure why)
 
             # add a marker for user location
-            folium.Marker([lat, lon], popup=popup_test, tooltip="Your Location", icon=folium.Icon(color='purple')).add_to(my_map)
+            folium.Marker([lat, lon], popup="Your Location", tooltip="Your Location", icon=folium.Icon(color='purple')).add_to(my_map)
             
             for index, row in sorted_df.iterrows():
-                folium.Marker([row['parklat'], row['parklon']], popup=row['ParkName'], tooltip=(row['ParkName'],"Miles from you:", row['miles']), icon=folium.Icon(color='green')).add_to(my_map)
+                #adding plot
+                image_name = row['pname']
+                html = '<h1>This is your location</h1>'
+                html += '<p>This is a picture of an Excavator.</p>'
+                html += '<img src="images/{image_name}" alt="Precipitation Plot:" width="200">'
+                popup_test = folium.Popup(html, max_width=300)  
+                
+                folium.Marker([row['parklat'], row['parklon']], 
+                popup=popup_test, 
+                tooltip=(row['ParkName'],"Miles from you:", row['miles']), 
+                icon=folium.Icon(color='green')).add_to(my_map)
 
+    
             return my_map._repr_html_()
 
     return '''
@@ -118,7 +128,7 @@ def city_location():
     '''
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
 
     
 #read in temp data
