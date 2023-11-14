@@ -109,7 +109,7 @@ def city_location():
                 html += '<p>Average Precipitation data: .</p>'
                 html += f'<img src="precip/{image_name}" alt="Precipitation Plot:" width="200">'
                 html += '<p>Average Temperature data: .</p>'
-                html += '<img src="static/test.jpg" alt="Temperature Plot:" width="200">'
+                html += '<img src="static/precipplot_AcadiaNationalPark.png" alt="Temperature Plot:" width="200">'
                 popup_test = folium.Popup(html, max_width=300)  
                 
                 folium.Marker([row['parklat'], row['parklon']], 
