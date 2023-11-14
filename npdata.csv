@@ -1,5 +1,5 @@
 ParkName,State,parklat,parklon,AnnualVisitors, ClosestAirportCity, airportlat, airportlon ,pname
-Acadia National Park, Maine,44.3386,-68.2733,3500000, Bar Harbor,44.3876,-68.2039,precipplot_AcadiaNationalPark.png
+Acadia National Park, Maine,44.3386,-68.2733,3500000, Bar Harbor,44.3876,-68.2039,precipplot_AcadiaNationalPark.jpg
 Arches National Park, Utah,38.7331,-109.5925,1700000, Moab,38.5733,-109.5498,precipplot_ArchesNationalPark.png
 Badlands National Park, South Dakota,43.8554,-102.3397,1100000, Rapid City,44.076,-103.228,precipplot_BadlandsNationalPark.png
 Big Bend National Park, Texas,29.2504,-103.25,463832, Midland/Odessa,31.8457,-102.3676,precipplot_BigBendNationalPark.png
@@ -24,7 +24,7 @@ Great Basin National Park, Nevada,38.9833,-114.3,131802, Ely,39.2487,-114.8878,p
 Great Sand Dunes National Park and Preserve, Colorado,37.791,-105.5943,527546, Alamosa,37.4694,-105.869,precipplot_GreatSandDunesNationalParkandPreserve.png
 Great Smoky Mountains National Park, North Carolina/Tennessee,35.6532,-83.507,12100000, Knoxville/Asheville,35.9606,-83.9207,precipplot_GreatSmokyMountainsNationalPark.png
 Guadalupe Mountains National Park, Texas,31.9231,-104.8645,189691, El Paso,31.7619,-106.485,precipplot_GuadalupeMountainsNationalPark.png
-Haleakalā National Park, Hawaii,20.711,-156.2535,1000000, Kahului,20.8893,-156.4729,precipplot_Haleakal�NationalPark.png
+Haleakalā National Park, Hawaii,20.711,-156.2535,1000000, Kahului,20.8893,-156.4729,precipplot_HaleakalaNationalPark.png
 Hot Springs National Park, Arkansas,34.5246,-93.0636,1600000, Little Rock,34.7465,-92.2896,precipplot_HotSpringsNationalPark.png
 Indiana Dunes National Park, Indiana,41.6611,-87.0624,2200000, Chicago/Gary,41.602,-87.3372,precipplot_IndianaDunesNationalPark.png
 Isle Royale National Park, Michigan,48.011,-88.8278,26410, Houghton,47.1214,-88.5692,precipplot_IsleRoyaleNationalPark.png

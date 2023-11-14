@@ -102,9 +102,14 @@ def city_location():
             for index, row in sorted_df.iterrows():
                 #adding plot
                 image_name = row['pname']
-                html = '<h1>This is your location</h1>'
-                html += '<p>This is a picture of an Excavator.</p>'
-                html += '<img src="images/{image_name}" alt="Precipitation Plot:" width="200">'
+                parkname = row['ParkName']
+                
+                html = f'<h1> {parkname} </h1>'
+                html += '<p>Link to NP Website: https://www.nps.gov/acad/index.htm .</p>'
+                html += '<p>Average Precipitation data: .</p>'
+                html += f'<img src="static/{image_name}" alt="Precipitation Plot:" width="200">'
+                html += '<p>Average Temperature data: .</p>'
+                html += '<img src="static/test.jpg" alt="Temperature Plot:" width="200">'
                 popup_test = folium.Popup(html, max_width=300)  
                 
                 folium.Marker([row['parklat'], row['parklon']], 
