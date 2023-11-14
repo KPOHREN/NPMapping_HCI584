@@ -105,7 +105,7 @@ def city_location():
                 parkname = row['ParkName']
                 
                 html = f'<h1> {parkname} </h1>'
-                html += '<p>Link to NP Website: https://www.nps.gov/acad/index.htm .</p>'
+                html += '<p>Link to NP Website: https://www.nps.gov/index.htm .</p>'
                 html += '<p>Average Precipitation data: .</p>'
                 html += f'<img src="precip/{image_name}" alt="Precipitation Plot:" width="200">'
                 html += '<p>Average Temperature data: .</p>'
