@@ -102,14 +102,16 @@ def city_location():
             for index, row in sorted_df.iterrows():
                 #adding plot
                 image_name = row['pname']
+                tempplot=row['tname']
                 parkname = row['ParkName']
                 
                 html = f'<h1> {parkname} </h1>'
-                html += '<p>Link to NP Website: https://www.nps.gov/index.htm .</p>'
+                html += '<p>Link to NP Website: https://www.nps.gov/index.htm .</p>' #TODO - add in specific links?
                 html += '<p>Average Precipitation data: .</p>'
-                html += f'<img src="precip/{image_name}" alt="Precipitation Plot:" width="200">'
+                html += f'<img src="static/{image_name}" alt="Precipitation Plot:" width="200">' #TODO - Get images to show up
                 html += '<p>Average Temperature data: .</p>'
-                html += '<img src="static/precipplot_AcadiaNationalPark.png" alt="Temperature Plot:" width="200">'
+                html += f'<img src="static/{tempplot}" alt="Temperature Plot:" width="200">'
+                #TODO - add names to spreadsheet and callout specific plots, also make the plots a different color & clean up overlap
                 popup_test = folium.Popup(html, max_width=300)  
                 
                 folium.Marker([row['parklat'], row['parklon']], 
