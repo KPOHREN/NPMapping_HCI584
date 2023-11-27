@@ -108,11 +108,11 @@ def city_location():
                 html = f'<h1> {parkname} </h1>'
                 html += '<p>Link to NP Website: https://www.nps.gov/index.htm .</p>' #TODO - add in specific links?
                 html += '<p>Average Precipitation data: .</p>'
-                html += f'<img src="static/{image_name}" alt="Precipitation Plot:" width="200">' #TODO - Get images to show up
+                html += f'<img src="static/{image_name}" alt="Precipitation Plot:" width="380">' #TODO - Get images to show up
                 html += '<p>Average Temperature data: .</p>'
-                html += f'<img src="static/{tempplot}" alt="Temperature Plot:" width="200">'
+                html += f'<img src="static/{tempplot}" alt="Temperature Plot:" width="440">'
                 #TODO - add names to spreadsheet and callout specific plots, also make the plots a different color & clean up overlap
-                popup_test = folium.Popup(html, max_width=300)  
+                popup_test = folium.Popup(html, max_width=450)  
                 
                 folium.Marker([row['parklat'], row['parklon']], 
                 popup=popup_test, 
@@ -136,52 +136,3 @@ def city_location():
 
 if __name__ == '__main__':
     app.run(debug=False)
-
-    
-#read in temp data
-dft = pd.read_csv('tempdata.csv')
-
-#comment out as not needed to run everytime
-#for index, row in dft.iterrows():
-    #category = row['park']
-    #values = row.drop('park')
-    
-    # Create a bar plot for the current row
-    #plt.bar(values.index, values)
-    #plt.title(f'Temperature in {category}')
-    
-    # Adjust the plot layout
-    #plt.tight_layout()
-    
-    # Define the filename for the current plot
-    #filename = f'plot_{category}.png'
-    
-    # Save the plot as an image
-    #plt.savefig(filename)
-    
-    # Close the plot to release resources
-    #plt.close()
-   
-#read precipdata
-dfp = pd.read_csv('precipdata.csv')
-
-#for index, row in dfp.iterrows():
-    #category = row['park']
-    #values = row.drop('park')
-    
-    # Create a bar plot for the current row
-    #plt.bar(values.index, values)
-    #plt.title(f'Precipitation in inches for {category}')
-    
-    # Adjust the plot layout
-    #plt.tight_layout()
-    
-    # Define the filename for the current plot
-    #filename = f'precipplot_{category}.png'
-    
-    # Save the plot as an image
-    #plt.savefig(filename)
-    
-    # Close the plot to release resources
-    #plt.close()
-
