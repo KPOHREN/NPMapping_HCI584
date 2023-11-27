@@ -1,57 +1,673 @@
-﻿park,janht,janlt,febht,feblt,marht,marlt,aprht,aprlt,mayht,maylt,junht,junlt,julht,jullt,aught,auglt,sepht,setlt,octht,octlt,novht,novlt,decht,declt
-Acadia National Park,32,17,34,19,40,36,50,36,59,44,67,52,73,57,72,57,65,51,56,43,46,34,37,24
-Arches National Park,40,21,49,28,60,36,69,43,79,52,90,62,95,68,91,65,82,57,69,44,53,32,41,23
-Badlands National Park,35,13,40,17,51,25,62,35,71,46,82,55,90,61,89,60,78,49,63,36,48,23,36,14
-Big Bend National Park,62,38,68,42,75,48,83,56,89,63,95,70,93,71,92,71,86,65,81,57,71,47,63,39
-Biscayne National Park,75,61,77,62,79,65,82,69,85,73,87,76,89,78,89,78,87,77,84,73,80,68,77,64
-Black Canyon of the Gunnison National Park,38,17,45,23,55,30,64,37,73,45,84,53,88,59,85,57,77,49,65,38,50,27,39,19
-Bryce Canyon National Park,35,10,39,14,46,20,55,26,64,32,75,9,80,46,77,45,70,37,58,28,45,19,36,11
-Canyonlands National Park,40,21,49,28,60,36,69,43,79,52,90,62,95,68,91,65,82,57,69,44,53,32,41,23
-Capitol Reef National Park,41,20,47,26,58,34,65,39,74,48,87,58,91,65,88,63,80,55,66,43,51,31,40,21
-Carlsbad Caverns National Park,59,31,65,36,73,42,81,50,89,59,96,67,95,70,93,68,87,61,78,50,67,39,59,32
-Channel Islands National Park,65,54,64,53,65,52,67,54,69,56,73,59,78,64,80,66,79,66,75,61,69,57,65,53
-Congaree National Park,56,35,60,38,68,45,75,52,82,60,88,67,91,71,89,69,84,69,75,63,67,43,59,38
-Crater Lake National Park,40,24,45,27,52,29,58,33,66,39,75,45,84,50,83,49,76,42,63,34,47,28,39,23
-Cuyahoga Valley National Park,34,22,37,24,47,32,60,42,70,52,78,61,82,65,80,64,73,57,62,46,50,37,39,28
-Death Valley National Park,67,40,73,46,82,55,90,62,100,73,110,81,116,88,115,86,106,76,93,61,77,48,65,38
-Everglades National Park,78,54,80,56,82,58,85,61,88,66,90,71,91,73,92,73,91,73,87,70,83,63,79,57
-Gates of the Arctic National Park and Preserve,-1,-16,6,-12,18,5,35,14,55,36,69,48,70,50,62,44,49,33,27,14,7,-6,1,-13
-Gateway Arch National Park,41,25,46,29,57,38,68,48,77,57,85,66,89,70,87,67,80,59,69,48,56,38,44,29
-Glacier National Park,30,18,36,21,46,27,56,34,65,41,72,47,81,50,81,49,70,41,54,33,39,26,30,19
-Grand Canyon National Park,44,17,47,20,54,24,61,28,71,34,81,41,84,50,81,50,75,42,64,32,52,23,44,17
-Grand Teton National Park,25,6,30,9,39,18,49,26,60,34,70,40,79,44,77,42,68,35,54,27,37,18,26,8
-Great Basin National Park,39,15,43,19,51,25,59,30,68,36,79,44,86,51,84,50,75,41,63,31,49,22,39,15
-Great Sand Dunes National Park and Preserve,35,4,41,11,51,20,59,27,69,36,78,43,81,49,78,47,72,39,61,27,47,16,36,6
-Great Smoky Mountains National Park,47,29,51,32,60,38,68,46,75,54,81,61,84,65,83,64,78,58,69,46,59,37,50,32
-Guadalupe Mountains National Park,54,35,59,38,66,44,74,51,82,60,89,67,88,69,86,68,81,62,73,54,62,43,54,35
-Haleakala National Park,72,58,72,58,72,59,73,60,75,62,77,64,78,65,78,65,78,65,77,64,75,62,73,59
-Hot Springs National Park,51,32,56,36,65,44,73,52,80,60,87,68,91,71,91,70,84,63,73,52,62,43,53,35
-Indiana Dunes National Park,34,22,37,24,47,33,59,42,69,52,78,61,82,66,80,65,74,57,62,47,50,37,38,27
-Isle Royale National Park,18,0,23,3,34,15,48,28,61,38,70,48,75,54,74,53,64,45,50,34,36,22,23,8
-Joshua Tree National Park,59,37,63,41,70,46,77,51,85,59,94,67,99,73,97,72,91,65,80,54,67,43,59,36
-Katmai National Park and Preserve,26,12,29,14,34,18,43,27,54,36,61,43,64,48,63,48,55,41,43,29,31,18,26,13
-Kenai Fjords National Park,31,22,33,23,38,26,45,32,53,40,58,46,61,50,61,49,55,43,44,35,35,26,32,23
-Kings Canyon National Park,57,36,61,39,64,41,70,46,79,52,89,61,97,68,96,67,91,52,80,43,67,37,58,36
-Kobuk Valley National Park,4,-9,9,-6,16,-3,31,13,51,33,67,47,68,52,62,46,50,36,30,18,11,-1,5,-7
-Lake Clark National Park and Preserve,23,7,25,7,34,14,44,26,55,37,63,45,67,49,64,48,55,41,41,28,31,17,25,10
-Lassen Volcanic National Park,50,13,51,13,53,16,61,23,70,29,79,34,84,40,85,40,78,36,69,30,56,21,20,14
-Mammoth Cave National Park,44,28,49,31,59,39,68,47,76,56,84,63,86,67,85,65,79,58,69,47,58,39,48,32
-Mesa Verde National Park,40,16,46,21,56,26,64,32,74,40,84,48,88,55,85,53,77,45,65,34,51,24,41,17
-Mount Rainier National Park,33,21,35,22,37,22,44,27,50,32,56,44,64,44,63,43,57,39,48,33,41,37,34,22
-North Cascades National Park,39,30,43,32,49,34,57,38,64,44,69,48,76,52,76,53,70,49,57,43,45,36,39,31
-Olympic National Park,35,26,34,22,37,24,42,26,49,33,54,37,62,44,62,44,56,40,46,34,37,28,32,24
-Petrified Forest National Park,49,24,55,28,62,33,70,39,79,48,89,56,90,63,87,61,82,53,71,41,58,31,49,24
-Pinnacles National Park,61,43,63,45,65,46,68,48,72,51,77,55,81,58,81,58,80,56,75,52,67,46,61,43
-Redwood National and State Parks,55,41,56,42,56,43,57,44,59,47,62,50,63,52,64,52,65,50,62,47,58,44,55,41
-Rocky Mountain National Park,31,13,34,15,43,22,51,28,60,36,71,49,77,49,74,47,67,40,54,31,41,21,32,14
-Saguaro National Park,66,41,70,44,76,48,83,54,92,62,100,71,99,76,97,75,94,69,85,59,74,48,66,41
-Sequoia National Park,42,24,44,25,46,26,51,30,58,36,68,44,76,51,76,50,71,45,61,38,50,31,44,27
-Shenandoah National Park,45,26,49,28,58,35,68,44,76,53,84,61,87,65,85,63,78,56,68,45,58,36,49,29
-Theodore Roosevelt National Park,27,9,32,13,43,22,57,32,67,43,76,52,84,57,83,56,72,46,57,35,41,22,29,11
-Virgin Islands National Park,83,74,84,74,84,74,85,46,87,78,88,79,89,79,89,79,89,79,88,78,86,77,84,75
-Voyageurs National Park,16,-2,23,3,36,16,52,30,65,42,74,51,78,56,75,54,65,45,51,34,34,20,20,4
-Wind Cave National Park,35,16,37,18,45,23,52,30,61,39,71,48,79,54,78,53,68,44,55,34,43,24,35,16
-Wrangell-St. Elias National Park and Preserve,6,-11,18,-6,33,3,46,20,59,29,68,36,71,41,67,38,56,31,37,19,16,-2,10,-7
-Yellowstone National Park,25,5,30,7,38,14,47,23,55,31,66,38,75,43,74,42,64,35,50,27,35,17,26,8
-Yosemite National Park,54,38,59,41,65,44,72,47,80,53,88,59,93,64,92,63,87,58,76,50,63,43,54,38
-Zion National Park,51,29,56,33,64,39,72,45,82,53,93,61,97,69,95,67,87,59,75,48,60,37,50,30
+﻿park,month,hightemp,lowtemp
+Acadia National Park,Jan,32,17
+Acadia National Park,Feb,34,19
+Acadia National Park,Mar,40,36
+Acadia National Park,Apr,50,36
+Acadia National Park,May,59,44
+Acadia National Park,Jun,67,52
+Acadia National Park,Jul,73,57
+Acadia National Park,Aug,72,57
+Acadia National Park,Sep,65,51
+Acadia National Park,Oct,56,43
+Acadia National Park,Nov,46,34
+Acadia National Park,Dec,37,24
+Arches National Park,Jan,40,21
+Arches National Park,Feb,49,28
+Arches National Park,Mar,60,36
+Arches National Park,Apr,69,43
+Arches National Park,May,79,52
+Arches National Park,Jun,90,62
+Arches National Park,Jul,95,68
+Arches National Park,Aug,91,65
+Arches National Park,Sep,82,57
+Arches National Park,Oct,69,44
+Arches National Park,Nov,53,32
+Arches National Park,Dec,41,23
+Badlands National Park,Jan,35,13
+Badlands National Park,Feb,40,17
+Badlands National Park,Mar,51,25
+Badlands National Park,Apr,62,35
+Badlands National Park,May,71,46
+Badlands National Park,Jun,82,55
+Badlands National Park,Jul,90,61
+Badlands National Park,Aug,89,60
+Badlands National Park,Sep,78,49
+Badlands National Park,Oct,63,36
+Badlands National Park,Nov,48,23
+Badlands National Park,Dec,36,14
+Big Bend National Park,Jan,62,38
+Big Bend National Park,Feb,68,42
+Big Bend National Park,Mar,75,48
+Big Bend National Park,Apr,83,56
+Big Bend National Park,May,89,63
+Big Bend National Park,Jun,95,70
+Big Bend National Park,Jul,93,71
+Big Bend National Park,Aug,92,71
+Big Bend National Park,Sep,86,65
+Big Bend National Park,Oct,81,57
+Big Bend National Park,Nov,71,47
+Big Bend National Park,Dec,63,39
+Biscayne National Park,Jan,75,61
+Biscayne National Park,Feb,77,62
+Biscayne National Park,Mar,79,65
+Biscayne National Park,Apr,82,69
+Biscayne National Park,May,85,73
+Biscayne National Park,Jun,87,76
+Biscayne National Park,Jul,89,78
+Biscayne National Park,Aug,89,78
+Biscayne National Park,Sep,87,77
+Biscayne National Park,Oct,84,73
+Biscayne National Park,Nov,80,68
+Biscayne National Park,Dec,77,64
+Black Canyon of the Gunnison National Park,Jan,38,17
+Black Canyon of the Gunnison National Park,Feb,45,23
+Black Canyon of the Gunnison National Park,Mar,55,30
+Black Canyon of the Gunnison National Park,Apr,64,37
+Black Canyon of the Gunnison National Park,May,73,45
+Black Canyon of the Gunnison National Park,Jun,84,53
+Black Canyon of the Gunnison National Park,Jul,88,59
+Black Canyon of the Gunnison National Park,Aug,85,57
+Black Canyon of the Gunnison National Park,Sep,77,49
+Black Canyon of the Gunnison National Park,Oct,65,38
+Black Canyon of the Gunnison National Park,Nov,50,27
+Black Canyon of the Gunnison National Park,Dec,39,19
+Bryce Canyon National Park,Jan,35,10
+Bryce Canyon National Park,Feb,39,14
+Bryce Canyon National Park,Mar,46,20
+Bryce Canyon National Park,Apr,55,26
+Bryce Canyon National Park,May,64,32
+Bryce Canyon National Park,Jun,75,39
+Bryce Canyon National Park,Jul,80,46
+Bryce Canyon National Park,Aug,77,45
+Bryce Canyon National Park,Sep,70,37
+Bryce Canyon National Park,Oct,58,28
+Bryce Canyon National Park,Nov,45,19
+Bryce Canyon National Park,Dec,36,11
+Canyonlands National Park,Jan,40,21
+Canyonlands National Park,Feb,49,28
+Canyonlands National Park,Mar,60,36
+Canyonlands National Park,Apr,69,43
+Canyonlands National Park,May,79,52
+Canyonlands National Park,Jun,90,62
+Canyonlands National Park,Jul,95,68
+Canyonlands National Park,Aug,91,65
+Canyonlands National Park,Sep,82,57
+Canyonlands National Park,Oct,69,44
+Canyonlands National Park,Nov,53,32
+Canyonlands National Park,Dec,41,23
+Capitol Reef National Park,Jan,41,20
+Capitol Reef National Park,Feb,47,26
+Capitol Reef National Park,Mar,58,34
+Capitol Reef National Park,Apr,65,39
+Capitol Reef National Park,May,74,48
+Capitol Reef National Park,Jun,87,58
+Capitol Reef National Park,Jul,91,65
+Capitol Reef National Park,Aug,88,63
+Capitol Reef National Park,Sep,80,55
+Capitol Reef National Park,Oct,66,43
+Capitol Reef National Park,Nov,51,31
+Capitol Reef National Park,Dec,40,21
+Carlsbad Caverns National Park,Jan,59,31
+Carlsbad Caverns National Park,Feb,65,36
+Carlsbad Caverns National Park,Mar,73,42
+Carlsbad Caverns National Park,Apr,81,50
+Carlsbad Caverns National Park,May,89,59
+Carlsbad Caverns National Park,Jun,96,67
+Carlsbad Caverns National Park,Jul,95,70
+Carlsbad Caverns National Park,Aug,93,68
+Carlsbad Caverns National Park,Sep,87,61
+Carlsbad Caverns National Park,Oct,78,50
+Carlsbad Caverns National Park,Nov,67,39
+Carlsbad Caverns National Park,Dec,59,32
+Channel Islands National Park,Jan,65,54
+Channel Islands National Park,Feb,64,53
+Channel Islands National Park,Mar,65,52
+Channel Islands National Park,Apr,67,54
+Channel Islands National Park,May,69,56
+Channel Islands National Park,Jun,73,59
+Channel Islands National Park,Jul,78,64
+Channel Islands National Park,Aug,80,66
+Channel Islands National Park,Sep,79,66
+Channel Islands National Park,Oct,75,61
+Channel Islands National Park,Nov,69,57
+Channel Islands National Park,Dec,65,53
+Congaree National Park,Jan,56,35
+Congaree National Park,Feb,60,38
+Congaree National Park,Mar,68,45
+Congaree National Park,Apr,75,52
+Congaree National Park,May,82,60
+Congaree National Park,Jun,88,67
+Congaree National Park,Jul,91,71
+Congaree National Park,Aug,89,69
+Congaree National Park,Sep,84,69
+Congaree National Park,Oct,75,63
+Congaree National Park,Nov,67,43
+Congaree National Park,Dec,59,38
+Crater Lake National Park,Jan,40,24
+Crater Lake National Park,Feb,45,27
+Crater Lake National Park,Mar,52,29
+Crater Lake National Park,Apr,58,33
+Crater Lake National Park,May,66,39
+Crater Lake National Park,Jun,75,45
+Crater Lake National Park,Jul,84,50
+Crater Lake National Park,Aug,83,49
+Crater Lake National Park,Sep,76,42
+Crater Lake National Park,Oct,63,34
+Crater Lake National Park,Nov,47,28
+Crater Lake National Park,Dec,39,23
+Cuyahoga Valley National Park,Jan,34,22
+Cuyahoga Valley National Park,Feb,37,24
+Cuyahoga Valley National Park,Mar,47,32
+Cuyahoga Valley National Park,Apr,60,42
+Cuyahoga Valley National Park,May,70,52
+Cuyahoga Valley National Park,Jun,78,61
+Cuyahoga Valley National Park,Jul,82,65
+Cuyahoga Valley National Park,Aug,80,64
+Cuyahoga Valley National Park,Sep,73,57
+Cuyahoga Valley National Park,Oct,62,46
+Cuyahoga Valley National Park,Nov,50,37
+Cuyahoga Valley National Park,Dec,39,28
+Death Valley National Park,Jan,67,40
+Death Valley National Park,Feb,73,46
+Death Valley National Park,Mar,82,55
+Death Valley National Park,Apr,90,62
+Death Valley National Park,May,100,73
+Death Valley National Park,Jun,110,81
+Death Valley National Park,Jul,116,88
+Death Valley National Park,Aug,115,86
+Death Valley National Park,Sep,106,76
+Death Valley National Park,Oct,93,61
+Death Valley National Park,Nov,77,48
+Death Valley National Park,Dec,65,38
+Everglades National Park,Jan,78,54
+Everglades National Park,Feb,80,56
+Everglades National Park,Mar,82,58
+Everglades National Park,Apr,85,61
+Everglades National Park,May,88,66
+Everglades National Park,Jun,90,71
+Everglades National Park,Jul,91,73
+Everglades National Park,Aug,92,73
+Everglades National Park,Sep,91,73
+Everglades National Park,Oct,80,70
+Everglades National Park,Nov,83,63
+Everglades National Park,Dec,79,57
+Gates of the Arctic National Park and Preserve,Jan,-1,-16
+Gates of the Arctic National Park and Preserve,Feb,6,-12
+Gates of the Arctic National Park and Preserve,Mar,18,5
+Gates of the Arctic National Park and Preserve,Apr,35,14
+Gates of the Arctic National Park and Preserve,May,55,36
+Gates of the Arctic National Park and Preserve,Jun,69,48
+Gates of the Arctic National Park and Preserve,Jul,70,50
+Gates of the Arctic National Park and Preserve,Aug,62,44
+Gates of the Arctic National Park and Preserve,Sep,49,33
+Gates of the Arctic National Park and Preserve,Oct,27,14
+Gates of the Arctic National Park and Preserve,Nov,7,-6
+Gates of the Arctic National Park and Preserve,Dec,1,-13
+Gateway Arch National Park,Jan,41,25
+Gateway Arch National Park,Feb,46,29
+Gateway Arch National Park,Mar,57,38
+Gateway Arch National Park,Apr,68,48
+Gateway Arch National Park,May,77,57
+Gateway Arch National Park,Jun,85,66
+Gateway Arch National Park,Jul,89,70
+Gateway Arch National Park,Aug,87,67
+Gateway Arch National Park,Sep,80,59
+Gateway Arch National Park,Oct,69,48
+Gateway Arch National Park,Nov,56,38
+Gateway Arch National Park,Dec,44,29
+Glacier National Park,Jan,30,18
+Glacier National Park,Feb,36,21
+Glacier National Park,Mar,46,27
+Glacier National Park,Apr,56,34
+Glacier National Park,May,65,41
+Glacier National Park,Jun,72,47
+Glacier National Park,Jul,81,50
+Glacier National Park,Aug,81,49
+Glacier National Park,Sep,70,41
+Glacier National Park,Oct,54,33
+Glacier National Park,Nov,39,26
+Glacier National Park,Dec,30,19
+Grand Canyon National Park,Jan,44,17
+Grand Canyon National Park,Feb,47,20
+Grand Canyon National Park,Mar,54,24
+Grand Canyon National Park,Apr,61,28
+Grand Canyon National Park,May,71,34
+Grand Canyon National Park,Jun,81,41
+Grand Canyon National Park,Jul,84,50
+Grand Canyon National Park,Aug,81,50
+Grand Canyon National Park,Sep,75,42
+Grand Canyon National Park,Oct,64,32
+Grand Canyon National Park,Nov,52,23
+Grand Canyon National Park,Dec,44,17
+Grand Teton National Park,Jan,25,6
+Grand Teton National Park,Feb,30,9
+Grand Teton National Park,Mar,39,18
+Grand Teton National Park,Apr,49,26
+Grand Teton National Park,May,60,34
+Grand Teton National Park,Jun,70,40
+Grand Teton National Park,Jul,79,44
+Grand Teton National Park,Aug,77,42
+Grand Teton National Park,Sep,68,35
+Grand Teton National Park,Oct,54,27
+Grand Teton National Park,Nov,37,18
+Grand Teton National Park,Dec,26,8
+Great Basin National Park,Jan,39,15
+Great Basin National Park,Feb,43,19
+Great Basin National Park,Mar,51,25
+Great Basin National Park,Apr,59,30
+Great Basin National Park,May,68,36
+Great Basin National Park,Jun,79,44
+Great Basin National Park,Jul,86,51
+Great Basin National Park,Aug,84,50
+Great Basin National Park,Sep,75,41
+Great Basin National Park,Oct,63,31
+Great Basin National Park,Nov,49,22
+Great Basin National Park,Dec,39,15
+Great Sand Dunes National Park and Preserve,Jan,35,4
+Great Sand Dunes National Park and Preserve,Feb,41,11
+Great Sand Dunes National Park and Preserve,Mar,51,20
+Great Sand Dunes National Park and Preserve,Apr,59,27
+Great Sand Dunes National Park and Preserve,May,69,36
+Great Sand Dunes National Park and Preserve,Jun,78,43
+Great Sand Dunes National Park and Preserve,Jul,81,49
+Great Sand Dunes National Park and Preserve,Aug,78,47
+Great Sand Dunes National Park and Preserve,Sep,72,39
+Great Sand Dunes National Park and Preserve,Oct,61,27
+Great Sand Dunes National Park and Preserve,Nov,47,16
+Great Sand Dunes National Park and Preserve,Dec,36,6
+Great Smoky Mountains National Park,Jan,47,29
+Great Smoky Mountains National Park,Feb,51,32
+Great Smoky Mountains National Park,Mar,60,38
+Great Smoky Mountains National Park,Apr,68,46
+Great Smoky Mountains National Park,May,75,54
+Great Smoky Mountains National Park,Jun,81,61
+Great Smoky Mountains National Park,Jul,84,65
+Great Smoky Mountains National Park,Aug,83,64
+Great Smoky Mountains National Park,Sep,78,58
+Great Smoky Mountains National Park,Oct,69,46
+Great Smoky Mountains National Park,Nov,59,37
+Great Smoky Mountains National Park,Dec,50,32
+Guadalupe Mountains National Park,Jan,54,35
+Guadalupe Mountains National Park,Feb,59,38
+Guadalupe Mountains National Park,Mar,66,44
+Guadalupe Mountains National Park,Apr,74,51
+Guadalupe Mountains National Park,May,82,60
+Guadalupe Mountains National Park,Jun,89,67
+Guadalupe Mountains National Park,Jul,88,69
+Guadalupe Mountains National Park,Aug,86,68
+Guadalupe Mountains National Park,Sep,81,62
+Guadalupe Mountains National Park,Oct,73,54
+Guadalupe Mountains National Park,Nov,62,43
+Guadalupe Mountains National Park,Dec,54,35
+Haleakala National Park,Jan,72,58
+Haleakala National Park,Feb,72,58
+Haleakala National Park,Mar,72,59
+Haleakala National Park,Apr,73,60
+Haleakala National Park,May,75,62
+Haleakala National Park,Jun,77,64
+Haleakala National Park,Jul,78,65
+Haleakala National Park,Aug,78,65
+Haleakala National Park,Sep,78,65
+Haleakala National Park,Oct,77,64
+Haleakala National Park,Nov,75,62
+Haleakala National Park,Dec,73,59
+Hot Springs National Park,Jan,51,32
+Hot Springs National Park,Feb,56,36
+Hot Springs National Park,Mar,65,44
+Hot Springs National Park,Apr,73,52
+Hot Springs National Park,May,80,60
+Hot Springs National Park,Jun,87,68
+Hot Springs National Park,Jul,91,71
+Hot Springs National Park,Aug,91,70
+Hot Springs National Park,Sep,84,63
+Hot Springs National Park,Oct,73,52
+Hot Springs National Park,Nov,62,43
+Hot Springs National Park,Dec,53,35
+Indiana Dunes National Park,Jan,34,22
+Indiana Dunes National Park,Feb,37,24
+Indiana Dunes National Park,Mar,47,33
+Indiana Dunes National Park,Apr,59,42
+Indiana Dunes National Park,May,69,52
+Indiana Dunes National Park,Jun,78,61
+Indiana Dunes National Park,Jul,82,66
+Indiana Dunes National Park,Aug,80,65
+Indiana Dunes National Park,Sep,74,57
+Indiana Dunes National Park,Oct,62,47
+Indiana Dunes National Park,Nov,50,37
+Indiana Dunes National Park,Dec,38,27
+Isle Royale National Park,Jan,18,0
+Isle Royale National Park,Feb,23,3
+Isle Royale National Park,Mar,34,15
+Isle Royale National Park,Apr,48,28
+Isle Royale National Park,May,61,38
+Isle Royale National Park,Jun,70,48
+Isle Royale National Park,Jul,75,54
+Isle Royale National Park,Aug,74,53
+Isle Royale National Park,Sep,64,45
+Isle Royale National Park,Oct,50,34
+Isle Royale National Park,Nov,36,22
+Isle Royale National Park,Dec,23,8
+Joshua Tree National Park,Jan,59,37
+Joshua Tree National Park,Feb,63,41
+Joshua Tree National Park,Mar,70,46
+Joshua Tree National Park,Apr,77,51
+Joshua Tree National Park,May,85,59
+Joshua Tree National Park,Jun,94,67
+Joshua Tree National Park,Jul,99,73
+Joshua Tree National Park,Aug,97,72
+Joshua Tree National Park,Sep,91,65
+Joshua Tree National Park,Oct,80,54
+Joshua Tree National Park,Nov,67,43
+Joshua Tree National Park,Dec,59,36
+Katmai National Park and Preserve,Jan,26,12
+Katmai National Park and Preserve,Feb,29,14
+Katmai National Park and Preserve,Mar,34,18
+Katmai National Park and Preserve,Apr,43,27
+Katmai National Park and Preserve,May,54,36
+Katmai National Park and Preserve,Jun,61,43
+Katmai National Park and Preserve,Jul,64,48
+Katmai National Park and Preserve,Aug,63,48
+Katmai National Park and Preserve,Sep,55,41
+Katmai National Park and Preserve,Oct,43,29
+Katmai National Park and Preserve,Nov,31,18
+Katmai National Park and Preserve,Dec,26,13
+Kenai Fjords National Park,Jan,31,22
+Kenai Fjords National Park,Feb,33,23
+Kenai Fjords National Park,Mar,38,26
+Kenai Fjords National Park,Apr,45,32
+Kenai Fjords National Park,May,53,40
+Kenai Fjords National Park,Jun,58,46
+Kenai Fjords National Park,Jul,61,49
+Kenai Fjords National Park,Aug,61,49
+Kenai Fjords National Park,Sep,55,43
+Kenai Fjords National Park,Oct,44,35
+Kenai Fjords National Park,Nov,35,26
+Kenai Fjords National Park,Dec,32,23
+Kings Canyon National Park,Jan,57,36
+Kings Canyon National Park,Feb,61,39
+Kings Canyon National Park,Mar,64,41
+Kings Canyon National Park,Apr,70,46
+Kings Canyon National Park,May,79,52
+Kings Canyon National Park,Jun,89,61
+Kings Canyon National Park,Jul,97,68
+Kings Canyon National Park,Aug,96,67
+Kings Canyon National Park,Sep,91,52
+Kings Canyon National Park,Oct,80,43
+Kings Canyon National Park,Nov,67,37
+Kings Canyon National Park,Dec,58,36
+Kobuk Valley National Park,Jan,4,-9
+Kobuk Valley National Park,Feb,9,-6
+Kobuk Valley National Park,Mar,16,-3
+Kobuk Valley National Park,Apr,31,13
+Kobuk Valley National Park,May,51,33
+Kobuk Valley National Park,Jun,67,47
+Kobuk Valley National Park,Jul,68,52
+Kobuk Valley National Park,Aug,62,46
+Kobuk Valley National Park,Sep,50,36
+Kobuk Valley National Park,Oct,30,18
+Kobuk Valley National Park,Nov,11,-1
+Kobuk Valley National Park,Dec,5,-7
+Lake Clark National Park and Preserve,Jan,23,7
+Lake Clark National Park and Preserve,Feb,25,7
+Lake Clark National Park and Preserve,Mar,34,14
+Lake Clark National Park and Preserve,Apr,44,26
+Lake Clark National Park and Preserve,May,55,37
+Lake Clark National Park and Preserve,Jun,63,45
+Lake Clark National Park and Preserve,Jul,67,49
+Lake Clark National Park and Preserve,Aug,64,48
+Lake Clark National Park and Preserve,Sep,55,41
+Lake Clark National Park and Preserve,Oct,41,28
+Lake Clark National Park and Preserve,Nov,31,17
+Lake Clark National Park and Preserve,Dec,25,10
+Lassen Volcanic National Park,Jan,50,31
+Lassen Volcanic National Park,Feb,51,13
+Lassen Volcanic National Park,Mar,53,16
+Lassen Volcanic National Park,Apr,61,23
+Lassen Volcanic National Park,May,70,29
+Lassen Volcanic National Park,Jun,79,34
+Lassen Volcanic National Park,Jul,84,40
+Lassen Volcanic National Park,Aug,85,40
+Lassen Volcanic National Park,Sep,78,36
+Lassen Volcanic National Park,Oct,69,30
+Lassen Volcanic National Park,Nov,56,21
+Lassen Volcanic National Park,Dec,20,14
+Mammoth Cave National Park,Jan,44,28
+Mammoth Cave National Park,Feb,49,31
+Mammoth Cave National Park,Mar,59,39
+Mammoth Cave National Park,Apr,68,47
+Mammoth Cave National Park,May,76,56
+Mammoth Cave National Park,Jun,84,63
+Mammoth Cave National Park,Jul,86,67
+Mammoth Cave National Park,Aug,85,65
+Mammoth Cave National Park,Sep,79,58
+Mammoth Cave National Park,Oct,69,47
+Mammoth Cave National Park,Nov,58,39
+Mammoth Cave National Park,Dec,48,32
+Mesa Verde National Park,Jan,40,16
+Mesa Verde National Park,Feb,46,21
+Mesa Verde National Park,Mar,56,26
+Mesa Verde National Park,Apr,64,32
+Mesa Verde National Park,May,74,40
+Mesa Verde National Park,Jun,84,48
+Mesa Verde National Park,Jul,88,55
+Mesa Verde National Park,Aug,85,53
+Mesa Verde National Park,Sep,77,45
+Mesa Verde National Park,Oct,65,34
+Mesa Verde National Park,Nov,51,24
+Mesa Verde National Park,Dec,41,17
+Mount Rainier National Park,Jan,33,21
+Mount Rainier National Park,Feb,35,22
+Mount Rainier National Park,Mar,37,22
+Mount Rainier National Park,Apr,44,27
+Mount Rainier National Park,May,50,32
+Mount Rainier National Park,Jun,56,44
+Mount Rainier National Park,Jul,64,44
+Mount Rainier National Park,Aug,63,43
+Mount Rainier National Park,Sep,57,39
+Mount Rainier National Park,Oct,48,33
+Mount Rainier National Park,Nov,41,37
+Mount Rainier National Park,Dec,34,22
+North Cascades National Park,Jan,39,30
+North Cascades National Park,Feb,43,32
+North Cascades National Park,Mar,49,34
+North Cascades National Park,Apr,57,38
+North Cascades National Park,May,64,44
+North Cascades National Park,Jun,69,48
+North Cascades National Park,Jul,76,52
+North Cascades National Park,Aug,76,53
+North Cascades National Park,Sep,70,49
+North Cascades National Park,Oct,57,43
+North Cascades National Park,Nov,45,36
+North Cascades National Park,Dec,39,31
+Olympic National Park,Jan,35,26
+Olympic National Park,Feb,34,22
+Olympic National Park,Mar,37,24
+Olympic National Park,Apr,42,26
+Olympic National Park,May,49,33
+Olympic National Park,Jun,54,37
+Olympic National Park,Jul,62,44
+Olympic National Park,Aug,62,44
+Olympic National Park,Sep,56,40
+Olympic National Park,Oct,46,34
+Olympic National Park,Nov,37,28
+Olympic National Park,Dec,32,24
+Petrified Forest National Park,Jan,49,24
+Petrified Forest National Park,Feb,55,28
+Petrified Forest National Park,Mar,62,33
+Petrified Forest National Park,Apr,70,39
+Petrified Forest National Park,May,79,48
+Petrified Forest National Park,Jun,89,56
+Petrified Forest National Park,Jul,90,63
+Petrified Forest National Park,Aug,87,61
+Petrified Forest National Park,Sep,82,53
+Petrified Forest National Park,Oct,71,41
+Petrified Forest National Park,Nov,58,31
+Petrified Forest National Park,Dec,49,24
+Pinnacles National Park,Jan,61,43
+Pinnacles National Park,Feb,63,45
+Pinnacles National Park,Mar,65,46
+Pinnacles National Park,Apr,68,48
+Pinnacles National Park,May,72,51
+Pinnacles National Park,Jun,77,55
+Pinnacles National Park,Jul,81,58
+Pinnacles National Park,Aug,81,58
+Pinnacles National Park,Sep,80,56
+Pinnacles National Park,Oct,75,52
+Pinnacles National Park,Nov,67,46
+Pinnacles National Park,Dec,61,43
+Redwood National and State Parks,Jan,55,41
+Redwood National and State Parks,Feb,56,42
+Redwood National and State Parks,Mar,56,43
+Redwood National and State Parks,Apr,57,44
+Redwood National and State Parks,May,59,47
+Redwood National and State Parks,Jun,62,50
+Redwood National and State Parks,Jul,63,52
+Redwood National and State Parks,Aug,64,52
+Redwood National and State Parks,Sep,65,50
+Redwood National and State Parks,Oct,62,47
+Redwood National and State Parks,Nov,58,44
+Redwood National and State Parks,Dec,55,41
+Rocky Mountain National Park,Jan,31,13
+Rocky Mountain National Park,Feb,34,15
+Rocky Mountain National Park,Mar,43,22
+Rocky Mountain National Park,Apr,51,28
+Rocky Mountain National Park,May,60,36
+Rocky Mountain National Park,Jun,71,49
+Rocky Mountain National Park,Jul,77,49
+Rocky Mountain National Park,Aug,74,47
+Rocky Mountain National Park,Sep,67,40
+Rocky Mountain National Park,Oct,54,31
+Rocky Mountain National Park,Nov,41,21
+Rocky Mountain National Park,Dec,32,14
+Saguaro National Park,Jan,66,41
+Saguaro National Park,Feb,70,44
+Saguaro National Park,Mar,76,48
+Saguaro National Park,Apr,83,54
+Saguaro National Park,May,92,62
+Saguaro National Park,Jun,100,71
+Saguaro National Park,Jul,99,76
+Saguaro National Park,Aug,96,75
+Saguaro National Park,Sep,94,69
+Saguaro National Park,Oct,85,59
+Saguaro National Park,Nov,74,48
+Saguaro National Park,Dec,66,41
+Sequoia National Park,Jan,42,24
+Sequoia National Park,Feb,44,25
+Sequoia National Park,Mar,46,26
+Sequoia National Park,Apr,51,30
+Sequoia National Park,May,58,36
+Sequoia National Park,Jun,68,44
+Sequoia National Park,Jul,76,51
+Sequoia National Park,Aug,76,50
+Sequoia National Park,Sep,71,45
+Sequoia National Park,Oct,61,38
+Sequoia National Park,Nov,50,31
+Sequoia National Park,Dec,44,27
+Shenandoah National Park,Jan,45,26
+Shenandoah National Park,Feb,49,28
+Shenandoah National Park,Mar,58,35
+Shenandoah National Park,Apr,68,44
+Shenandoah National Park,May,76,53
+Shenandoah National Park,Jun,84,61
+Shenandoah National Park,Jul,87,65
+Shenandoah National Park,Aug,85,63
+Shenandoah National Park,Sep,78,56
+Shenandoah National Park,Oct,68,45
+Shenandoah National Park,Nov,58,36
+Shenandoah National Park,Dec,49,29
+Theodore Roosevelt National Park,Jan,27,9
+Theodore Roosevelt National Park,Feb,32,13
+Theodore Roosevelt National Park,Mar,43,22
+Theodore Roosevelt National Park,Apr,57,32
+Theodore Roosevelt National Park,May,67,43
+Theodore Roosevelt National Park,Jun,76,52
+Theodore Roosevelt National Park,Jul,84,57
+Theodore Roosevelt National Park,Aug,83,56
+Theodore Roosevelt National Park,Sep,72,46
+Theodore Roosevelt National Park,Oct,57,35
+Theodore Roosevelt National Park,Nov,41,22
+Theodore Roosevelt National Park,Dec,29,11
+Virgin Islands National Park,Jan,83,74
+Virgin Islands National Park,Feb,84,74
+Virgin Islands National Park,Mar,84,74
+Virgin Islands National Park,Apr,85,46
+Virgin Islands National Park,May,87,78
+Virgin Islands National Park,Jun,88,79
+Virgin Islands National Park,Jul,89,79
+Virgin Islands National Park,Aug,89,79
+Virgin Islands National Park,Sep,89,79
+Virgin Islands National Park,Oct,88,78
+Virgin Islands National Park,Nov,86,77
+Virgin Islands National Park,Dec,84,75
+Voyageurs National Park,Jan,16,-2
+Voyageurs National Park,Feb,23,3
+Voyageurs National Park,Mar,36,16
+Voyageurs National Park,Apr,52,30
+Voyageurs National Park,May,65,42
+Voyageurs National Park,Jun,74,51
+Voyageurs National Park,Jul,78,56
+Voyageurs National Park,Aug,75,54
+Voyageurs National Park,Sep,65,45
+Voyageurs National Park,Oct,51,34
+Voyageurs National Park,Nov,34,20
+Voyageurs National Park,Dec,20,4
+Wind Cave National Park,Jan,35,16
+Wind Cave National Park,Feb,37,18
+Wind Cave National Park,Mar,45,23
+Wind Cave National Park,Apr,52,30
+Wind Cave National Park,May,61,39
+Wind Cave National Park,Jun,71,48
+Wind Cave National Park,Jul,79,54
+Wind Cave National Park,Aug,78,53
+Wind Cave National Park,Sep,68,44
+Wind Cave National Park,Oct,55,34
+Wind Cave National Park,Nov,43,24
+Wind Cave National Park,Dec,35,16
+Wrangell-St. Elias National Park and Preserve,Jan,6,-11
+Wrangell-St. Elias National Park and Preserve,Feb,18,-6
+Wrangell-St. Elias National Park and Preserve,Mar,33,3
+Wrangell-St. Elias National Park and Preserve,Apr,46,20
+Wrangell-St. Elias National Park and Preserve,May,59,29
+Wrangell-St. Elias National Park and Preserve,Jun,68,36
+Wrangell-St. Elias National Park and Preserve,Jul,71,41
+Wrangell-St. Elias National Park and Preserve,Aug,67,38
+Wrangell-St. Elias National Park and Preserve,Sep,56,37
+Wrangell-St. Elias National Park and Preserve,Oct,37,19
+Wrangell-St. Elias National Park and Preserve,Nov,16,-2
+Wrangell-St. Elias National Park and Preserve,Dec,10,-7
+Yellowstone National Park,Jan,25,5
+Yellowstone National Park,Feb,30,7
+Yellowstone National Park,Mar,38,14
+Yellowstone National Park,Apr,47,23
+Yellowstone National Park,May,55,31
+Yellowstone National Park,Jun,66,38
+Yellowstone National Park,Jul,75,45
+Yellowstone National Park,Aug,74,42
+Yellowstone National Park,Sep,64,35
+Yellowstone National Park,Oct,50,27
+Yellowstone National Park,Nov,35,17
+Yellowstone National Park,Dec,26,8
+Yosemite National Park,Jan,54,38
+Yosemite National Park,Feb,59,41
+Yosemite National Park,Mar,65,44
+Yosemite National Park,Apr,72,47
+Yosemite National Park,May,80,53
+Yosemite National Park,Jun,88,59
+Yosemite National Park,Jul,93,64
+Yosemite National Park,Aug,92,63
+Yosemite National Park,Sep,87,58
+Yosemite National Park,Oct,76,50
+Yosemite National Park,Nov,63,43
+Yosemite National Park,Dec,54,38
+Zion National Park,Jan,51,29
+Zion National Park,Feb,56,33
+Zion National Park,Mar,64,39
+Zion National Park,Apr,72,45
+Zion National Park,May,82,53
+Zion National Park,Jun,93,61
+Zion National Park,Jul,97,69
+Zion National Park,Aug,95,67
+Zion National Park,Sep,87,59
+Zion National Park,Oct,75,48
+Zion National Park,Nov,60,37
+Zion National Park,Dec,50,30
