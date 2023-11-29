@@ -11,27 +11,6 @@ from flask import Flask, render_template, request
 import folium
 from folium import IFrame
 
-
-#defs at top
-def geocode_place(place_name): #MAY NOT NEED ANYMORE
-    base_url = "https://geocode.maps.co/search"  # free geocoding service, w/o need for API key!
-    params = {"q": place_name}
-    
-    response = requests.get(base_url, params=params)
-    print(response.url)
-    
-    if response.status_code == 200:
-        data = response.json()
-        if data:
-            # Extract latitude and longitude from the first result
-            result = data[0]
-            lat = result.get("lat")
-            lon = result.get("lon")
-            return lat, lon
-    
-    # Return None if no data or an error occurred
-    return None, None
-
 #calculate distance between two locations
 def haversine_distance(lat1, lon1, lat2, lon2):
     # Convert latitude and longitude from degrees to radians
@@ -56,8 +35,10 @@ def haversine_distance(lat1, lon1, lat2, lon2):
 
 app = Flask(__name__)
 
+#Launch Flask App
 @app.route('/', methods=['GET', 'POST'])
 def city_location():
+    #ask user for location and pull in
     if request.method == 'POST':
         city = request.form.get('city')
         state = request.form.get('state')
@@ -90,11 +71,6 @@ def city_location():
             
             # Create a Folium map centered at the city's location
             my_map = folium.Map(location=[lat, lon], zoom_start=5)
-            
-            #html = '<h1>This is your location</h1>'
-            #html += '<p>This is a picture of an Excavator.</p>'
-            #html += '<img src="/static/test.jpg" alt="excavator image" width="200" height="200">'
-            #popup_test = folium.Popup(html, max_width=300)    # Don't use iframe or the img won't work (not sure why)
 
             # add a marker for user location
             folium.Marker([lat, lon], popup="Your Location", tooltip="Your Location", icon=folium.Icon(color='purple')).add_to(my_map)
@@ -105,18 +81,19 @@ def city_location():
                 tempplot=row['tname']
                 parkname = row['ParkName']
                 
-                html = f'<h1> {parkname} </h1>'
-                html += '<p>Link to NP Website: https://www.nps.gov/index.htm .</p>' #TODO - add in specific links?
-                html += '<p>Average Precipitation data: .</p>'
-                html += f'<img src="static/{image_name}" alt="Precipitation Plot:" width="380">' #TODO - Get images to show up
-                html += '<p>Average Temperature data: .</p>'
-                html += f'<img src="static/{tempplot}" alt="Temperature Plot:" width="440">'
-                #TODO - add names to spreadsheet and callout specific plots, also make the plots a different color & clean up overlap
-                popup_test = folium.Popup(html, max_width=450)  
+                #Popup information for each park
+                html = f'<h1> {parkname} </h1>' #ParkName Title
+                html += '<p>Link to NP Website: https://www.nps.gov/index.htm </p>' #TODO - add in specific links
+                html += '<p>Average Precipitation data: </p>'
+                html += f'<img src="static/{image_name}" alt="Precipitation Plot:" width="380">' #Precipitation Plot
+                html += '<p>Average Temperature data: </p>'
+                html += f'<img src="static/{tempplot}" alt="Temperature Plot:" width="440">' #Temperature Plot
+                popup_test = folium.Popup(html, max_width=450)  #Saving popup & determining width
                 
+                #Marker when hoover over pops up distance
                 folium.Marker([row['parklat'], row['parklon']], 
                 popup=popup_test, 
-                tooltip=(row['ParkName'],"Miles from you:", row['miles']), 
+                tooltip=(row['ParkName'],": Miles from you:", row['miles']), 
                 icon=folium.Icon(color='green')).add_to(my_map)
 
     
