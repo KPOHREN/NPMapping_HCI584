@@ -47,10 +47,10 @@ def city_location():
         response = requests.get(f"https://nominatim.openstreetmap.org/search?format=json&q={city},+{state}")
         data = response.json()
 
+        #Check if the entry is valid, and return a error message if not
         if data and isinstance(data, list) and data[0].get('lat') is not None and data[0].get('lon') is not None:
             lat = float(data[0]['lat'])
             lon = float(data[0]['lon'])
-            # Continue processing or return the coordinates
             
             #read in Nat Park Locations
             df = pd.read_csv('npdata.csv')
