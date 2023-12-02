@@ -72,29 +72,37 @@ def city_location():
             
             # Create a Folium map centered at the city's location
             my_map = folium.Map(location=[lat, lon], zoom_start=5)
+            
+            new = (city, state)
+            userlocation = " ".join(new)
 
             # add a marker for user location
-            folium.Marker([lat, lon], popup="Your Location", tooltip="Your Location", icon=folium.Icon(color='purple')).add_to(my_map)
+            folium.Marker([lat, lon], popup=(userlocation), tooltip=(userlocation), icon=folium.Icon(color='purple')).add_to(my_map)
             
             for index, row in sorted_df.iterrows():
                 #adding plot
                 image_name = row['pname']
                 tempplot=row['tname']
                 parkname = row['ParkName']
+                distance = row['miles']
+                
                 
                 #Popup information for each park
                 html = f'<h1> {parkname} </h1>' #ParkName Title
-                html += '<p>Link to NP Website: https://www.nps.gov/index.htm </p>' #TODO - add in specific links
+                html += f'This park is {distance} miles from {userlocation}'
+                html += '<p> To learn more about this park click <a href="https://www.nps.gov/findapark/index.htm">here</a>.</p>' #TODO - add in specific links
                 html += '<p>Average Precipitation data: </p>'
                 html += f'<img src="static/{image_name}" alt="Precipitation Plot:" width="380">' #Precipitation Plot
                 html += '<p>Average Temperature data: </p>'
                 html += f'<img src="static/{tempplot}" alt="Temperature Plot:" width="440">' #Temperature Plot
                 popup_test = folium.Popup(html, max_width=450)  #Saving popup & determining width
                 
+                toolstr = row['ParkName']
+
                 #Marker when hoover over pops up distance
                 folium.Marker([row['parklat'], row['parklon']], 
                 popup=popup_test, 
-                tooltip=(row['ParkName'],": Miles from you:", row['miles']), 
+                tooltip=toolstr, 
                 icon=folium.Icon(color='green')).add_to(my_map)
 
     
