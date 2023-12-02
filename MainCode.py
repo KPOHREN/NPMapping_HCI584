@@ -102,18 +102,8 @@ def city_location():
         else: 
             return 'Invalid location data. Please hit back arrow to check entry & try again'
 
+    return render_template("index.html")
 
-    return '''
-        <form method="post">
-            <label for="city">City:</label>
-            <input type="text" id="city" name="city" required>
-            <br>
-            <label for="state">State Abbreviation:</label>
-            <input type="text" id="state" name="state" required>
-            <br>
-            <input type="submit" value="Find National Parks">
-        </form>
-    '''
 
 if __name__ == '__main__':
     app.run(debug=False)
